@@ -13,7 +13,7 @@ MongoClient.connect('mongodb+srv://slyram06:lee146906@cluster0.fzore.mongodb.net
 
   db = client.db('community');
 
-  app.listen(8080, function () {
+  app.listen((process.env.PORT || 8080) , function () {
     console.log('listening on 8080')
   });
 
