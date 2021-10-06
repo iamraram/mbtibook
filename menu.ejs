@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문서</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<body class="index_html">
+
+  <div class="nav_bar">
+    <a href="/menu">
+      <li class="bar_content">메뉴</li>
+    </a>
+    <a href="/write">
+      <li class="bar_content">작성하기</li>
+    </a>
+  </div>
+
+  <h1 class="top_list">게시판 둘러보기</h1>
+
+  <script>
+    function breaking() {
+      alert('각 MBTI별 게시판은 준비중입니다 :)')
+    }
+  </script>
+  
+  <div class="include_box">
+    <a href="/">
+      <div class="blocks_f"> 전체 공개 게시판 </div>
+    </a>
+    <div class="blocks" onclick="javascript:breaking()"> ISTP 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> ISTJ 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> ISFP 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> ISFJ 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> INTP 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> INTJ 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> INFP 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> INFJ 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> ESTP 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> ESTJ 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> ESFP 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> ESFJ 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> ENTP 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> ENTJ 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> ENFP 게시판 </div>
+    <div class="blocks" onclick="javascript:breaking()"> ENFJ 게시판 </div>
+  </div>
+
+</body>
+
+<style>
+
+  @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+  body {
+    margin: 0px;
+    font-size: 18px;
+    font-family: 'NanumSquare', sans-serif;
+    margin-bottom: 100px;
+  }
+
+  a {
+     color: black;
+   }
+
+  .none {
+    display: none;
+  }
+
+  .include_box {
+    display: inline-block;
+    width: 450px;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .blocks {
+    transition-duration: 0.2s;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 150px;
+    margin: 20px;
+    display: inline-block;
+    background-color:  rgb(252, 252, 252);
+    box-shadow: 2px 2px 2px rgb(200, 200, 200);
+  }
+
+  .blocks_f {
+    transition-duration: 0.2s;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 375px;
+    margin-bottom: 20px;
+    display: inline-block;
+    background-color:  rgb(252, 252, 252);
+    box-shadow: 2px 2px 2px rgb(200, 200, 200);
+  }
+
+  .blocks_f:hover {
+    transition-duration: 0.2s;
+    background-color:  rgb(230, 230, 230);
+    font-weight: 600;
+  }
+
+  .blocks:hover {
+    transition-duration: 0.2s;
+    background-color:  rgb(230, 230, 230);
+    font-weight: 600;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .borders {
+    padding-bottom: 32.5px;
+    border-bottom: 1px solid gray
+  }
+
+  .ud {
+    transition-duration: 0.2s;
+    width: 180px;
+    height: 40px;
+    margin: 5px;
+    border: none;
+    background-color: rgb(4, 71, 255);
+    color: white;
+    border: 1px solid rgb(4, 71, 255);
+    border-radius: 10px;
+  }
+
+  .ud:hover {
+    transition-duration: 0.2s;
+    background-color:  rgba(4, 71, 255, 0.8);
+    border: 1px solid rgba(4, 71, 255, 0.8);
+  }
+
+  .aligns {
+    text-align: left;
+  }
+
+  .lists {
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 500px;
+    line-height: 35px;
+    display: inline-block;
+    background-color: rgb(250, 250, 250);
+    text-align: center;
+  }
+
+  .gray {
+    color: rgb(200, 200, 200);
+  }
+  
+  .mid_list {
+    margin-top: 50px;
+  }
+  
+  .top_list {
+    margin-top: 50px;
+        margin-top: 100px;
+  }
+
+  .index_html {
+    text-align: center;
+  }
+
+  .nav_bar {
+    width: 100%;
+    background-color: rgb(220, 220, 220);
+    text-align: center;
+    border-bottom: 2px solid rgb(4, 71, 255);
+    position: fixed;
+    top: 0px;
+  }
+
+  .bar_content {
+    transition-duration: 0.4s;
+    display: inline-block;
+    width: 100px;
+    padding: 12px;
+    margin: 5px;
+    text-align: center;
+    color: rgb(100, 100, 100);
+    border-radius: 10px;
+  }
+
+  .bar_content:hover {
+    background-color: rgb(180, 180, 180);
+  }
+
+</style>
+
+</html>

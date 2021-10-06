@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문서</title>
+</head>
+<body class="index_html">
+
+  <div class="nav_bar">
+    <a href="/menu">
+      <li class="bar_content">메뉴</li>
+    </a>
+    <a href="/write">
+      <li class="bar_content">작성하기</li>
+    </a>
+  </div>
+
+  <form class="form_send" action="/add" method="POST">
+    <div class="form_box_first">
+      <div class="form_label">닉네임 (8글자 이내)</div>
+      <input type="text" class="form_input" name="name" maxlength="8">
+    </div>
+
+    <div class="form_box_second">
+      <div class="form_label">비밀번호 (숫자 6자 이내)</div>
+      <input type="password" class="form_input" name="password" maxlength="6"
+      oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+    </div>
+
+    <div class="form_label_textarea">글 내용</div>
+    <textarea type="text_field" class="form_input_textarea" name="description"> </textarea>
+
+    <select name="mbti_choose" class="choose">
+      <option value="전체 공개">전체 공개 게시판</option>
+      <option value="ISTP">ISTP 게시판</option>
+      <option value="ISTJ">ISTJ 게시판</option>
+      <option value="ISFP">ISFP 게시판</option>
+      <option value="ISFJ">ISFJ 게시판</option>
+      <option value="INTP">INTP 게시판</option>
+      <option value="INTJ">INTJ 게시판</option>
+      <option value="INFP">INFP 게시판</option>
+      <option value="INFJ">INFJ 게시판</option>
+      <option value="ESTP">ESTP 게시판</option>
+      <option value="ESTJ">ESTJ 게시판</option>
+      <option value="ESFP">ESFP 게시판</option>
+      <option value="ESFJ">ESFJ 게시판</option>
+      <option value="ENTP">ENTP 게시판</option>
+      <option value="ENTJ">ENTJ 게시판</option>
+      <option value="ENFP">ENFP 게시판</option>
+      <option value="ENFJ">ENFJ 게시판</option>
+    </select>
+
+    <button type="submit" class="form_submit">저장</button>
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</body>
+
+<style>
+
+  @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+  body {
+    margin: 0px;
+    font-size: 18px;
+    font-family: 'NanumSquare', sans-serif;
+  }
+
+  .choose {
+    width: 180px;
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    top: 1.5px;
+    margin-right: 25px;
+
+    border: none;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 7px;
+  }
+
+  select:focus {
+    outline: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  input, textarea {
+    transition-duration: 0.3s;
+  }
+
+  input:focus, textarea:focus {
+    outline: none;
+    transition-duration: 0.3s;
+    border: 1px solid blue;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  textarea {
+    resize: none;
+    font-family: 'NanumSquare', sans-serif;
+  }
+
+  .index_html {
+    text-align: center;
+  }
+
+  .nav_bar {
+    width: 100%;
+    background-color: rgb(220, 220, 220);
+    text-align: center;
+    border-bottom: 2px solid rgb(4, 71, 255);
+    position: fixed;
+    top: 0px;
+  }
+
+  .bar_content {
+    transition-duration: 0.4s;
+    display: inline-block;
+    width: 100px;
+    padding: 12px;
+    margin: 5px;
+    text-align: center;
+    color: rgb(100, 100, 100);
+    border-radius: 10px;
+  }
+
+  .bar_content:hover {
+    background-color: rgb(180, 180, 180);
+  }
+
+  .form_box_first {
+    width: 262px;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .form_box_second {
+    width: 262px;
+    display: inline-block;
+    text-align: right;
+  }
+
+  .form_send {
+    margin-top: 50px;
+    width: 530px;
+    display: inline-block;
+    margin-top: 100px;
+  }
+
+  .form_label {
+    display: inline-block;
+    text-align: left;
+    width: 249px;
+  }
+
+  .form_label_textarea {
+    display: inline-block;
+    text-align: left;
+    width: 520px;
+  }
+
+  .form_input {
+    width: 220px;
+    padding: 13.5px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 12.5px;
+    font-size: 17px;
+    color: rgb(80, 80, 80);
+  }
+
+  .form_input_textarea {
+    width: 500px;
+    padding: 13.5px;
+    height: 350px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 12.5px;
+    font-size: 17px;
+    color: rgb(80, 80, 80);
+    line-height: 30px;
+  }
+
+  .form_submit {
+    margin-top: 25px;
+    width: 90px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgb(4, 71, 255);
+    color: white;
+    border: 1px solid rgb(4, 71, 255);
+    border-radius: 7.5px;
+  }
+
+  input[type=password] {
+    letter-spacing: 8.5px;
+  }
+
+</style>
+
+</html>

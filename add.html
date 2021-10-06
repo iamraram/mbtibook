@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문서</title>
+</head>
+
+<body class="index_html" oncontextmenu="return false">
+
+  <div class="nav_bar">
+    <a href="/menu">
+      <li class="bar_content">메뉴</li>
+    </a>
+    <a href="/write">
+      <li class="bar_content">작성하기</li>
+    </a>
+  </div>
+  <script>
+    function go() {
+      location.href = '/';
+    }
+
+    function doNotReload() {
+        if ((event.ctrlKey == true && (event.keyCode == 78 || event.keyCode == 82)) || (event.keyCode == 116)) {
+          event.keyCode = 0;
+          event.cancelBubble = true;
+          event.returnValue = false;
+        }
+      }
+      document.onkeydown = doNotReload;
+      doNotReload();
+  </script>
+
+  <div class="complete">
+    <h2>글 작성이 성공적으로 완료되었습니다.</h2>
+    <br>
+    <div class="desc">
+      다음 수칙을 지켜 글을 작성하셨는지 확인해주세요.
+      <br>
+      1. 본인이나 타인의 개인정보가 포함되어 있나요?
+      <br>
+      2. 타인을 비방하거나 혐오하는 표현을 사용했나요?
+      <br>
+      3. 다른 이용자들에게 혐오감 또는 불쾌감을 형성할 수 있는 글이나 사진을 첨부했나요?
+      <br><br>
+      작성한 글을 보시려면 아래 버튼을 눌러주세요.
+      <br>
+      <button onclick="javascript:go();" class="form_submit">저장</button>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+</body>
+
+<style>
+  @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+  body {
+    margin: 0px;
+    font-size: 18px;
+    font-family: 'NanumSquare', sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  input,
+  textarea {
+    transition-duration: 0.3s;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    transition-duration: 0.3s;
+    border: 1px solid blue;
+  }
+
+  button:focus {
+    outline: none;
+  }
+
+  textarea {
+    resize: none;
+    font-family: 'NanumSquare', sans-serif;
+  }
+
+  .desc {
+    line-height: 50px;
+  }
+
+  .complete {
+    margin-top: 40px;
+    width: 425px;
+    text-align: left;
+    display: inline-block;
+        margin-top: 100px;
+  }
+
+  .index_html {
+    text-align: center;
+  }
+
+  .nav_bar {
+    width: 100%;
+    background-color: rgb(220, 220, 220);
+    text-align: center;
+    border-bottom: 2px solid rgb(4, 71, 255);
+    position: fixed;
+    top: 0px;
+  }
+
+  .bar_content {
+    transition-duration: 0.4s;
+    display: inline-block;
+    width: 100px;
+    padding: 12px;
+    margin: 5px;
+    text-align: center;
+    color: rgb(100, 100, 100);
+    border-radius: 10px;
+  }
+
+  .bar_content:hover {
+    background-color: rgb(180, 180, 180);
+  }
+
+  .form_box_first {
+    width: 262px;
+    display: inline-block;
+    text-align: left;
+  }
+
+  .form_box_second {
+    width: 262px;
+    display: inline-block;
+    text-align: right;
+  }
+
+  .form_send {
+    margin-top: 50px;
+    width: 530px;
+    display: inline-block;
+  }
+
+  .form_label {
+    display: inline-block;
+    text-align: left;
+    width: 249px;
+  }
+
+  .form_label_textarea {
+    display: inline-block;
+    text-align: left;
+    width: 520px;
+  }
+
+  .form_input {
+    width: 220px;
+    padding: 13.5px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 12.5px;
+    font-size: 17px;
+    color: rgb(80, 80, 80);
+  }
+
+  .form_input_textarea {
+    width: 500px;
+    padding: 13.5px;
+    height: 350px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 12.5px;
+    font-size: 17px;
+    color: rgb(80, 80, 80);
+    line-height: 30px;
+  }
+
+  .form_submit {
+    margin-top: 25px;
+    width: 90px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgb(4, 71, 255);
+    color: white;
+    border: 1px solid rgb(4, 71, 255);
+    border-radius: 7.5px;
+  }
+
+  input[type=password] {
+    letter-spacing: 8.5px;
+  }
+</style>
+
+</html>
