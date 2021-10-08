@@ -78,7 +78,11 @@ app.get('/check', function (req, res) {
 });
 
 app.post('/add', function (req, res) {
-  const today = new Date();   
+  const curr = new Date();
+  const utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
+  const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
+
+  const today = new Date(utc + KR_TIME_DIFF);   
 
   const year = today.getFullYear();
   const month = today.getMonth() + 1;
