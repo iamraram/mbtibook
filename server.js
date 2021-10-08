@@ -131,33 +131,33 @@ app.post('/add', function (req, res) {
   res.sendFile(__dirname + '/add.html');
 });
 
-app.get('/:id', function (req, res) {
-  db.collection('user').findOne(
-    {
-      _id: Number(req.params.id)
-    },
+// app.get('/:id', function (req, res) {
+//   db.collection('user').findOne(
+//     {
+//       _id: Number(req.params.id)
+//     },
 
-    function (err, result) {
+//     function (err, result) {
 
-      var _id = req.params.id;
-      var user_name = result.user_name;
-      var user_password = result.user_password;
-      var post_description = result.post_description;
-      var post_title = result.post_title;
-      var post_mbti = result.post_mbti;
-      var post_types = result.post_types;
-      var showing_date = result.showing_date;
+//       var _id = req.params.id;
+//       var user_name = result.user_name;
+//       var user_password = result.user_password;
+//       var post_description = result.post_description;
+//       var post_title = result.post_title;
+//       var post_mbti = result.post_mbti;
+//       var post_types = result.post_types;
+//       var showing_date = result.showing_date;
 
-      res.render('../numbers.ejs', {
-        _id: _id,
-        user_name: user_name,
-        user_password: user_password,
-        post_description: post_description,
-        post_title: post_title,
-        post_mbti: post_mbti,
-        post_types: post_types,
-        showing_date: showing_date
-      });
-      console.log(result)
-    });
-});
+//       res.render('../numbers.ejs', {
+//         _id: _id,
+//         user_name: user_name,
+//         user_password: user_password,
+//         post_description: post_description,
+//         post_title: post_title,
+//         post_mbti: post_mbti,
+//         post_types: post_types,
+//         showing_date: showing_date
+//       });
+//       console.log(result)
+//     });
+// });
