@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>문서</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<body class="index_html">
+
+  <div class="nav_bar">
+    <a href="/menu">
+      <li class="bar_content">메뉴</li>
+    </a>
+    <a href="/write">
+      <li class="bar_content">작성하기</li>
+    </a>
+    <a href="/check">
+      <li class="bar_content">검사하기</li>
+    </a>
+  </div>
+
+  <h1 class="top_list">MBTI 간단 검사</h1>
+  <h5 class="gray">20문항으로 보통 3분 이내로 검사가 종료됩니다. 본 검사는 아무런 과학적 근거가 없습니다.</h5>
+
+  <script>
+    var q_1 = 0;
+    var q_2 = 0;
+    var q_3 = 0;
+    var q_4 = 0;
+    var q_5 = 0;
+    var q_6 = 0;
+    var q_7 = 0;
+    var q_8 = 0;
+    var q_9 = 0;
+    var q_10 = 0;
+    var q_11 = 0;
+    var q_12 = 0;
+    var q_13 = 0;
+    var q_14 = 0;
+    var q_15 = 0;
+    var q_16 = 0;
+    var q_17 = 0;
+    var q_18 = 0;
+    var q_19 = 0;
+    var q_20 = 0;
+
+    function q1_1() {
+      document.getElementById('q1_1').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q1_1').style.border = '1.5px solid blue'
+      document.getElementById('q1_2').style.backgroundColor = 'white'
+      document.getElementById('q1_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+      q_1 = 1;
+    }
+
+    function q1_2() {
+      document.getElementById('q1_1').style.backgroundColor = 'white'
+      document.getElementById('q1_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q1_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q1_2').style.border = '1.5px solid blue'
+
+       q_1 = 2;
+    }
+
+    function q2_1() {
+      document.getElementById('q2_1').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q2_1').style.border = '1.5px solid blue'
+      document.getElementById('q2_2').style.backgroundColor = 'white'
+      document.getElementById('q2_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+       q_2 = 1;
+    }
+
+    function q2_2() {
+      document.getElementById('q2_1').style.backgroundColor = 'white'
+      document.getElementById('q2_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q2_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q2_2').style.border = '1.5px solid blue'
+
+       q_2 = 2;
+    }
+    
+    function q3_1() {
+      document.getElementById('q3_1').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q3_1').style.border = '1.5px solid blue'
+      document.getElementById('q3_2').style.backgroundColor = 'white'
+      document.getElementById('q3_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+       q_3 = 1;
+    }
+
+    function q3_2() {
+      document.getElementById('q3_1').style.backgroundColor = 'white'
+      document.getElementById('q3_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q3_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q3_2').style.border = '1.5px solid blue'
+
+       q_3 = 2;
+    }
+
+    function q4_1() {
+      document.getElementById('q4_1').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q4_1').style.border = '1.5px solid blue'
+      document.getElementById('q4_2').style.backgroundColor = 'white'
+      document.getElementById('q4_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+       q_4 = 1;
+    }
+
+    function q4_2() {
+      document.getElementById('q4_1').style.backgroundColor = 'white'
+      document.getElementById('q4_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q4_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q4_2').style.border = '1.5px solid blue'
+
+       q_4 = 2;
+    }
+
+    function q5_1() {
+        document.getElementById('q5_1').style.backgroundColor = 'rgb(235, 235, 235)'
+        document.getElementById('q5_1').style.border = '1.5px solid blue'
+        document.getElementById('q5_2').style.backgroundColor = 'white'
+        document.getElementById('q5_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+         q_5 = 1;
+      }
+
+    function q5_2() {
+        document.getElementById('q5_1').style.backgroundColor = 'white'
+        document.getElementById('q5_1').style.border = '1.5px solid rgb(180, 180, 180)'
+        document.getElementById('q5_2').style.backgroundColor = 'rgb(235, 235, 235)'
+        document.getElementById('q5_2').style.border = '1.5px solid blue'
+
+         q_5 = 2;
+      }
+
+    function q6_1() {
+        document.getElementById('q6_1').style.backgroundColor = 'rgb(235, 235, 235)'
+        document.getElementById('q6_1').style.border = '1.5px solid blue'
+        document.getElementById('q6_2').style.backgroundColor = 'white'
+        document.getElementById('q6_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+         q_6 = 1;
+      }
+
+    function q6_2() {
+        document.getElementById('q6_1').style.backgroundColor = 'white'
+        document.getElementById('q6_1').style.border = '1.5px solid rgb(180, 180, 180)'
+        document.getElementById('q6_2').style.backgroundColor = 'rgb(235, 235, 235)'
+        document.getElementById('q6_2').style.border = '1.5px solid blue'
+
+         q_6 = 2;
+      }
+
+    function q7_1() {
+        document.getElementById('q7_1').style.backgroundColor = 'rgb(235, 235, 235)'
+        document.getElementById('q7_1').style.border = '1.5px solid blue'
+        document.getElementById('q7_2').style.backgroundColor = 'white'
+        document.getElementById('q7_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+         q_7 = 1;
+      }
+
+    function q7_2() {
+        document.getElementById('q7_1').style.backgroundColor = 'white'
+        document.getElementById('q7_1').style.border = '1.5px solid rgb(180, 180, 180)'
+        document.getElementById('q7_2').style.backgroundColor = 'rgb(235, 235, 235)'
+        document.getElementById('q7_2').style.border = '1.5px solid blue'
+
+         q_7 = 2;
+      }
+
+    function q8_1() {
+        document.getElementById('q8_1').style.backgroundColor = 'rgb(235, 235, 235)'
+        document.getElementById('q8_1').style.border = '1.5px solid blue'
+        document.getElementById('q8_2').style.backgroundColor = 'white'
+        document.getElementById('q8_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+         q_8 = 1;
+      }
+
+    function q8_2() {
+      document.getElementById('q8_1').style.backgroundColor = 'white'
+      document.getElementById('q8_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q8_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q8_2').style.border = '1.5px solid blue'
+
+         q_8 = 2;
+    }
+
+    function q9_1() {
+        document.getElementById('q9_1').style.backgroundColor = 'rgb(235, 235, 235)'
+        document.getElementById('q9_1').style.border = '1.5px solid blue'
+        document.getElementById('q9_2').style.backgroundColor = 'white'
+        document.getElementById('q9_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+         q_9 = 1;
+      }
+
+    function q9_2() {
+        document.getElementById('q9_1').style.backgroundColor = 'white'
+        document.getElementById('q9_1').style.border = '1.5px solid rgb(180, 180, 180)'
+        document.getElementById('q9_2').style.backgroundColor = 'rgb(235, 235, 235)'
+        document.getElementById('q9_2').style.border = '1.5px solid blue'
+
+         q_9 = 2;
+      }
+
+    function q10_1() {
+        document.getElementById('q10_1').style.backgroundColor = 'rgb(235, 235, 235)'
+        document.getElementById('q10_1').style.border = '1.5px solid blue'
+        document.getElementById('q10_2').style.backgroundColor = 'white'
+        document.getElementById('q10_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+         q_10 = 1;
+      }
+
+    function q10_2() {
+        document.getElementById('q10_1').style.backgroundColor = 'white'
+        document.getElementById('q10_1').style.border = '1.5px solid rgb(180, 180, 180)'
+        document.getElementById('q10_2').style.backgroundColor = 'rgb(235, 235, 235)'
+        document.getElementById('q10_2').style.border = '1.5px solid blue'
+
+         q_10 = 2;
+      }
+
+    function q11_1() {
+      document.getElementById('q11_1').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q11_1').style.border = '1.5px solid blue'
+      document.getElementById('q11_2').style.backgroundColor = 'white'
+      document.getElementById('q11_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+       q_11 = 1;
+    }
+
+    function q11_2() {
+      document.getElementById('q11_1').style.backgroundColor = 'white'
+      document.getElementById('q11_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q11_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q11_2').style.border = '1.5px solid blue'
+
+       q_11 = 2;
+    }
+
+    function q12_1() {
+      document.getElementById('q12_1').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q12_1').style.border = '1.5px solid blue'
+      document.getElementById('q12_2').style.backgroundColor = 'white'
+      document.getElementById('q12_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+       q_12 = 1;
+    }
+
+    function q12_2() {
+      document.getElementById('q12_1').style.backgroundColor = 'white'
+      document.getElementById('q12_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q12_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q12_2').style.border = '1.5px solid blue'
+
+       q_12 = 2;
+    }
+
+    function q13_1() {
+      document.getElementById('q13_1').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q13_1').style.border = '1.5px solid blue'
+      document.getElementById('q13_2').style.backgroundColor = 'white'
+      document.getElementById('q13_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+       q_13 = 1;
+    }
+
+    function q13_2() {
+      document.getElementById('q13_1').style.backgroundColor = 'white'
+      document.getElementById('q13_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q13_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q13_2').style.border = '1.5px solid blue'
+
+       q_13 = 2;
+    }
+
+    function q14_1() {
+      document.getElementById('q14_1').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q14_1').style.border = '1.5px solid blue'
+      document.getElementById('q14_2').style.backgroundColor = 'white'
+      document.getElementById('q14_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+       q_14 = 1;
+    }
+
+    function q14_2() {
+      document.getElementById('q14_1').style.backgroundColor = 'white'
+      document.getElementById('q14_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q14_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q14_2').style.border = '1.5px solid blue'
+
+       q_14 = 2;
+    }
+
+    function q15_1() {
+      document.getElementById('q15_1').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q15_1').style.border = '1.5px solid blue'
+      document.getElementById('q15_2').style.backgroundColor = 'white'
+      document.getElementById('q15_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+       q_15 = 1;
+    }
+
+    function q15_2() {
+      document.getElementById('q15_1').style.backgroundColor = 'white'
+      document.getElementById('q15_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q15_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q15_2').style.border = '1.5px solid blue'
+
+       q_15 = 2;
+    }
+
+    function q16_1() {
+      document.getElementById('q16_1').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q16_1').style.border = '1.5px solid blue'
+      document.getElementById('q16_2').style.backgroundColor = 'white'
+      document.getElementById('q16_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+       q_16 = 1;
+    }
+
+    function q16_2() {
+      document.getElementById('q16_1').style.backgroundColor = 'white'
+      document.getElementById('q16_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q16_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q16_2').style.border = '1.5px solid blue'
+
+       q_16 = 2;
+    }
+
+    function q17_1() {
+      document.getElementById('q17_1').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q17_1').style.border = '1.5px solid blue'
+      document.getElementById('q17_2').style.backgroundColor = 'white'
+      document.getElementById('q17_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+       q_17 = 1;
+    }
+
+    function q17_2() {
+      document.getElementById('q17_1').style.backgroundColor = 'white'
+      document.getElementById('q17_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q17_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q17_2').style.border = '1.5px solid blue'
+
+       q_17 = 2;
+    }
+
+    function q18_1() {
+      document.getElementById('q18_1').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q18_1').style.border = '1.5px solid blue'
+      document.getElementById('q18_2').style.backgroundColor = 'white'
+      document.getElementById('q18_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+       q_18 = 1;
+    }
+
+    function q18_2() {
+      document.getElementById('q18_1').style.backgroundColor = 'white'
+      document.getElementById('q18_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q18_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q18_2').style.border = '1.5px solid blue'
+
+       q_18 = 2;
+    }
+
+    function q19_1() {
+      document.getElementById('q19_1').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q19_1').style.border = '1.5px solid blue'
+      document.getElementById('q19_2').style.backgroundColor = 'white'
+      document.getElementById('q19_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+       q_19 = 1;
+    }
+
+    function q19_2() {
+      document.getElementById('q19_1').style.backgroundColor = 'white'
+      document.getElementById('q19_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q19_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q19_2').style.border = '1.5px solid blue'
+
+       q_19 = 2;
+    }
+
+    function q20_1() {
+      document.getElementById('q20_1').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q20_1').style.border = '1.5px solid blue'
+      document.getElementById('q20_2').style.backgroundColor = 'white'
+      document.getElementById('q20_2').style.border = '1.5px solid rgb(180, 180, 180)'
+
+       q_20 = 1;
+    }
+
+    function q20_2() {
+      document.getElementById('q20_1').style.backgroundColor = 'white'
+      document.getElementById('q20_1').style.border = '1.5px solid rgb(180, 180, 180)'
+      document.getElementById('q20_2').style.backgroundColor = 'rgb(235, 235, 235)'
+      document.getElementById('q20_2').style.border = '1.5px solid blue'
+
+      q_20 = 2;
+    }
+
+  </script>
+  
+
+  <div id="vv">
+
+    <div class="mbti_top">
+      <div class="question">
+        1. 친구들과 밖에서 논 후 집에 들어갈 시간이 됐을 때 나의 생각은?
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q1_1()" id="q1_1">
+          빨리 집에 가서 편히 쉬고 싶다.
+        </div>
+        <div class="ans" onclick="q1_2()" id="q1_2">
+          조금 더 놀고 싶다.
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        2. 둘 중에 더 좋아하는 취미는?
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q2_1()" id="q2_1">
+          집에서 음악, 게임을 즐기기
+        </div>
+        <div class="ans" onclick="q2_2()" id="q2_2">
+          밖에서 사람들과 여가시간을 보내기 
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        3. 어떤 말이나 행동을 할 때 나는 보통 아래처럼 한다.
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q3_1()" id="q3_1">
+          생각보다 말과 행동을 먼저 한다.
+        </div>
+        <div class="ans" onclick="q3_2()" id="q3_2">
+          말과 행동보다 생각을 먼저 한다.
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        4. 누군가와 의사소통을 할 때 나는 아래처럼 많이 한다.
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q4_1()" id="q4_1">
+          주로 이야기를 많이 한다.
+        </div>
+        <div class="ans" onclick="q4_2()" id="q4_2">
+          주로 많이 듣기만 한다.
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        5. 나는 둘 중 이런 부분을 더 잘 안다.
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q5_1()" id="q5_1">
+          상대의 기분을 좋아지게 하는 법
+        </div>
+        <div class="ans" onclick="q5_2()" id="q5_2">
+          상대의 기분을 상하지 않게 하는 법
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        6. 나는 사과를 생각할 때, 이런 생각이 먼저 든다.
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q6_1()" id="q6_1">
+          빨갛고 동그란 아삭아삭한 과일
+        </div>
+        <div class="ans" onclick="q6_2()" id="q6_2">
+          애플, 스티브 잡스, 백설공주, 독사과
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        7. 누군가 나에게 시를 쓰라고 한다면 내가 먼저 할 일은?
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q7_1()" id="q7_1">
+          먼저 어떤 문장을 써야 할지 생각한다.
+        </div>
+        <div class="ans" onclick="q7_2()" id="q7_2">
+          먼저 주변의 사물이나 사람을 관찰한다.
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        8. 버려진 인형을 볼 때 나는 이런 생각을 먼저 한다.
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q8_1()" id="q8_1">
+          누가 인형을 버렸네.
+        </div>
+        <div class="ans" onclick="q8_2()" id="q8_2">
+          인형에게 뭔 일이 있었길래 버려졌을까?
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+      9. 내가 만약 큰 길가의 미끄러운 맨홀에 넘어진다면 나는 이런 생각을 한다.
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q9_1()" id="q9_1">
+          뒷 사람도 미끄러지지 않을까?
+        </div>
+        <div class="ans" onclick="q9_2()" id="q9_2">
+          아이고, 조심해야겠다.
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        10. 나는 내가 여기에 가깝다고 생각한다.
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q10_1()" id="q10_1">
+          꼼꼼한 사람
+        </div>
+        <div class="ans" onclick="q10_2()" id="q10_2">
+          창의적인 사람
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        11. 친구가 나에게 카톡을 보냈다. "나 정말 갖고 싶던 모자 샀어!" 나의 대답은?
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q11_1()" id="q11_1">
+          어떤 모자 샀어?
+        </div>
+        <div class="ans" onclick="q11_2()" id="q11_2">
+          정말? 좋겠다!
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        12. 누군가가 내가 힘들어보인다며 선물을 해줬다. 이 때 나의 감정은?
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q12_1()" id="q12_1">
+          나를 위해 선물을... (감동)
+        </div>
+        <div class="ans" onclick="q12_2()" id="q12_2">
+          고맙지만... 내가 힘들어보였나?
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        13. 내가 열심히 한 과제를 친구가 평가해줄 때 내가 더 듣고싶은 말은?
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q13_1()" id="q13_1">
+          잘했어~ 여기는 XX하게 수정해봐~
+        </div>
+        <div class="ans" onclick="q13_2()" id="q13_2">
+          고생했어~ 열심히 했네~
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        14. 취직을 못 해 힘들어하는 친구가 있다. 당신이 해줄 말은?
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q14_1()" id="q14_1">
+          A 회사에도 이력서 한 번 넣어봐!
+        </div>
+        <div class="ans" onclick="q14_2()" id="q14_2">
+          힘들겠네... 좋은 날이 올 거야!
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        15. 아프다고 하는 친구에게 내가 해줄 말은?
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q15_1()" id="q15_1">
+          아프면 병원에 가야지!
+        </div>
+        <div class="ans" onclick="q15_2()" id="q15_2">
+          많이 아파? 힘들겠다...
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        16. 여행을 갈 때, 나는 계획을 이렇게 짠다.
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q16_1()" id="q16_1">
+          1시에 XX에서 △△ 먹고, 2시엔 OO을 가고...
+        </div>
+        <div class="ans" onclick="q16_2()" id="q16_2">
+          △△ 먹고 OO도 가봐야지~ (큰 틀)
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        17. 매일 아침 나는 일어날 때 이런 생각을 한다.
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q17_1()" id="q17_1">
+          오늘 XX을 하고 OO도 해야겠다.
+        </div>
+        <div class="ans" onclick="q17_2()" id="q17_2">
+          아효... 졸리다... 조금 더 자야겠다.
+        </div>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        18. 백만년 만에 당신이 방 정리를 하게 되었다. 당신의 청소 방식은?
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q18_1()" id="q18_1">
+          책상과 서랍을 정리하고 만족해한다.
+        </div>
+        <div class="ans" onclick="q18_2()" id="q18_2">
+          방 구조를 바꾸고 싶어 미치겠다.
+        </div>
+      </div>
+    </div>
+    
+    <br>
+    
+    <div class="mbti_top">
+      <div class="question">
+        19. 과제를 해야 한다. 내가 먼저 할 일은?
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q19_1()" id="q19_1">
+          일의 순서를 정하고 프로젝트 계획을 세운다.
+        </div>
+        <div class="ans" onclick="q19_2()" id="q19_2">
+          가장 먼저 자료 조사부터 한다.
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="mbti_top">
+      <div class="question">
+        20. 친구와 내일 만나기로 약속했다. 나라면?
+      </div>
+      <div class="answer">
+        <div class="ans" onclick="q20_1()" id="q20_1">
+          몇 시에 어디서 만날래?
+        </div>
+        <div class="ans" onclick="q20_2()" id="q20_2">
+          그래~ 결정해서 내일 연락해줘~
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+
+  </div>
+
+    <script>
+
+      var fir_value = 0;
+      var sec_value = 0;
+      var thi_value = 0;
+      var fou_value = 0;
+
+      function show() {
+        if (q_1 == 0) { alert('1번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_2 == 0) { alert('2번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_3 == 0) { alert('3번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_4 == 0) { alert('4번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_5 == 0) { alert('5번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_6 == 0) { alert('6번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_7 == 0) { alert('7번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_8 == 0) { alert('8번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_9 == 0) { alert('9번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_10 == 0) { alert('10번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_11 == 0) { alert('11번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_12 == 0) { alert('12번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_13 == 0) { alert('13번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_14 == 0) { alert('14번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_15 == 0) { alert('15번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_16 == 0) { alert('16번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_17 == 0) { alert('17번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_18 == 0) { alert('18번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_19 == 0) { alert('19번, 답하지 않은 문항이 있습니다.'); return }
+        else if (q_20 == 0) { alert('20번, 답하지 않은 문항이 있습니다.'); return }
+        else {
+
+        console.log('hyefrdwdrfgt')
+        if (q_1 == 1) fir_value -= 1;
+        else if (q_1 == 2) fir_value += 1;
+
+        if (q_2 == 1) fir_value -= 1;
+        else if (q_2 == 2) fir_value += 1;
+        
+        if (q_3 == 1) fir_value += 1;
+        else if (q_3 == 2) fir_value -= 1;
+
+        if (q_4 == 1) fir_value += 1;
+        else if (q_4 == 2) fir_value -= 1;
+
+        if (q_5 == 1) fir_value += 1;
+        else if (q_5 == 2) fir_value -= 1;
+
+        if (q_6 == 1) sec_value -= 1;
+        else if (q_6 == 2) fir_value += 1;
+
+        if (q_7 == 1) sec_value += 1;
+        else if (q_7 == 2) fir_value -= 1;
+
+        if (q_8 == 1) sec_value -= 1;
+        else if (q_8 == 2) fir_value += 1;
+
+        if (q_9 == 1) sec_value += 1;
+        else if (q_9 == 2) fir_value -= 1;
+
+        if (q_10 == 1) sec_value -= 1;
+        else if (q_10 == 2) fir_value += 1;
+
+        if (q_11 == 1) thi_value -= 1;
+        else if (q_11 == 2) fir_value += 1;
+
+        if (q_12 == 1) thi_value += 1;
+        else if (q_12 == 2) fir_value -= 1;
+
+        if (q_13 == 1) thi_value -= 1;
+        else if (q_13 == 2) fir_value += 1;
+
+        if (q_14 == 1) thi_value -= 1;
+        else if (q_14 == 2) fir_value += 1;
+
+        if (q_15 == 1) thi_value += 1;
+        else if (q_15 == 2) fir_value -= 1;
+
+        if (q_16 == 1) fou_value += 1;
+        else if (q_16 == 2) fir_value -= 1;
+
+        if (q_17 == 1) fou_value += 1;
+        else if (q_17 == 2) fir_value -= 1;
+
+        if (q_18 == 1) fou_value -= 1;
+        else if (q_18 == 2) fir_value += 1;
+
+        if (q_19 == 1) fou_value += 1;
+        else if (q_19 == 2) fir_value -= 1;
+
+        if (q_20 == 1) fou_value += 1;
+        else if (q_20 == 2) fir_value -= 1;
+
+        console.log(q_1)
+        console.log(q_2)
+        console.log(q_3)
+        console.log(q_4)
+        console.log(q_6)
+        console.log(q_7)
+        console.log(q_8)
+        console.log(q_9)
+        console.log(q_10)
+        console.log(q_11)
+        console.log(q_12)
+        console.log(q_13)
+        console.log(q_14)
+        console.log(q_15)
+        console.log(q_16)
+        console.log(q_17)
+        console.log(q_18)
+        console.log(q_19)
+        console.log(q_20)
+
+        console.log(fir_value)
+        console.log(sec_value)
+        console.log(thi_value)
+        console.log(fou_value)
+
+        if (fir_value > 0) fir_value = 'E';
+        else if (fir_value <= 0) fir_value = 'I';
+
+        if (sec_value >= 0) sec_value = 'N';
+        else if (sec_value < 0) sec_value = 'S';
+
+        if (thi_value > 0) thi_value = 'F';
+        else if (thi_value <= 0) thi_value = 'T';
+
+        if (fou_value > 0) fou_value = 'J';
+        else if (fou_value <= 0) fou_value = 'P';
+
+        var real_result = fir_value + sec_value + thi_value + fou_value
+        document.querySelector('.resu').innerHTML = '당신은 ' + real_result + ' 입니다.'
+
+        var real_result_p = ''
+
+        if (real_result == 'INFP') real_result_p = '13.4'
+        if (real_result == 'ENFP') real_result_p = '12.6'
+        if (real_result == 'ESFJ') real_result_p = '8.4'
+        if (real_result == 'ISFJ') real_result_p = '7.7'
+        if (real_result == 'ISFP') real_result_p = '6.6'
+        if (real_result == 'ESFP') real_result_p = '6.4'
+        if (real_result == 'INTP') real_result_p = '6.3'
+        if (real_result == 'INFJ') real_result_p = '6.3'
+
+        if (real_result == 'ENFJ') real_result_p = '6.1'
+        if (real_result == 'ENTP') real_result_p = '5.0'
+        if (real_result == 'ESTJ') real_result_p = '4.6'
+        if (real_result == 'ISTJ') real_result_p = '4.3'
+        if (real_result == 'INTJ') real_result_p = '3.8'
+        if (real_result == 'ISTP') real_result_p = '3.1'
+        if (real_result == 'ESTP') real_result_p = '3.0'
+        if (real_result == 'ENTJ') real_result_p = '2.8'
+
+
+        document.querySelector('.resu2').innerHTML = '2021년, 한국에 ' + real_result_p + ' % 존재하는 유형입니다.'
+
+        document.getElementById('vv').style.display = 'none'
+        document.querySelector('.result').style.display = 'none'
+        document.querySelector('.resu').style.display = 'block'
+        document.querySelector('.resu2').style.display = 'block'
+        document.querySelector('.result_2').style.display = 'inline-block'
+      } 
+    }
+
+    </script>
+
+    <button class="result" onclick="show()">결과 보기</button>
+
+    <h2 class="resu"></h2>
+    <h2 class="resu2"></h2>
+    <button class="result_2" onclick="location.href = '/'">홈으로 돌아가기</button>
+
+</body>
+
+<style>
+  @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+  .resu, .resu2 {
+    display: none;
+    margin-top: 50px;
+    font-size: 25px;
+  }
+
+  .result, .result_2 {
+    display: inline-block;
+    width: 150px;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    border: 1px solid rgb(4, 71, 255);
+    background-color: rgb(4, 71, 255);
+    color: white;
+    border-radius: 15px;
+  }
+
+  .result_2 {
+    display: none;
+  }
+
+  .result:hover {
+    opacity: 0.8;
+  }
+
+  .black {
+    color: black;
+  }
+
+  .mbti_top {
+    margin-top: 50px;
+    width: 780px;
+    display: inline-block;
+  }
+
+  .question {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .answer {
+    text-align: left;
+  }
+
+  .ans {
+    transition-duration: 0.2s;
+    width: 335px;
+    padding: 15px;
+    margin: 10px;
+    border: 1.5px solid rgb(180, 180, 180);
+    border-radius: 18px;
+    margin-left: 0;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 2px 2px 2px rgb(200, 200, 200);
+  }
+
+  .parant_infor {
+    width: 320px;
+    border-right: 1px solid gray;
+    display: inline-block;
+  }
+
+  .brocks {
+    display: inline-block;
+    width: 40px;
+    position: relative;
+    bottom: 2px;
+  }
+
+  .orange {
+    font-weight: 600;
+    color: rgb(180, 180, 180);
+    text-align: left;
+  }
+
+  .af {
+    font-size: 110%;
+    font-weight: 600;
+    width: 460px;
+    position: relative;
+    bottom: 17px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    display: inline-block;
+    margin-left: 20px;
+  }
+
+  .titles_f {
+    width: 410px;
+    display: inline-block;
+  }
+
+  .top_shape {
+    font-weight: 600;
+    color: blue
+  }
+
+  .addr {
+    background-color: rgb(250, 250, 250);
+    text-align: left;
+    font-family: 'NanumSquare', sans-serif;
+    font-size: 17.5px;
+    width: 500px;
+    padding: none;
+    border: none;
+    overflow: show;
+    line-height: 30px;
+    resize: none;
+  }
+
+  .aligns {
+    display: none;
+  }
+
+  textarea:focus {
+    outline: none;
+  }
+
+  body {
+    margin: 0px;
+    font-size: 18px;
+    font-family: 'NanumSquare', sans-serif;
+    margin-bottom: 100px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .ud {
+    transition-duration: 0.2s;
+    padding: 10px;
+    border: none;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(4, 71, 255);
+    border-radius: 50px;
+  }
+
+  .ud:hover {
+    transition-duration: 0.2s;
+    background-color: rgba(4, 71, 255, 0.8);
+    border: 1px solid rgba(4, 71, 255, 0.8);
+    color: white;
+  }
+
+  .lists {
+    border: 1px solid gray;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 825px;
+    line-height: 35px;
+    display: inline-block;
+    background-color: rgb(250, 250, 250);
+    text-align: center;
+    box-shadow: 2px 2px 2px rgb(200, 200, 200);
+    text-align: left;
+    padding-bottom: 0;
+    padding-right: 0;
+    display: inline-block;
+  }
+
+  .gray {
+    color: rgb(200, 200, 200);
+  }
+
+  .mid_list {
+    margin-top: 50px;
+  }
+
+  .top_list {
+    margin-top: 50px;
+    margin-top: 100px;
+  }
+
+  .index_html {
+    text-align: center;
+  }
+
+  .nav_bar {
+    width: 100%;
+    background-color: rgb(220, 220, 220);
+    text-align: center;
+    border-bottom: 2px solid rgb(4, 71, 255);
+    position: fixed;
+    top: 0px;
+    z-index: 1;
+  }
+
+  .bar_content {
+    transition-duration: 0.4s;
+    display: inline-block;
+    width: 100px;
+    padding: 12px;
+    margin: 5px;
+    text-align: center;
+    color: rgb(100, 100, 100);
+    border-radius: 10px;
+  }
+
+  .bar_content:hover {
+    background-color: rgb(180, 180, 180);
+  }
+</style>
+
+</html>

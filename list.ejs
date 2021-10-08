@@ -15,9 +15,12 @@
     <a href="/write">
       <li class="bar_content">작성하기</li>
     </a>
+    <a href="/check">
+      <li class="bar_content">검사하기</li>
+    </a>
   </div>
 
-  <h1 class="top_list">글 목록</h1>
+  <h1 class="top_list">전체 공개 게시판</h1>
 
   <div class="mid_list">
 
@@ -25,36 +28,49 @@
 
     <% for (var i=0; i < posts.length;  i ++) { %>
 
-    <div class="lists">
-      <li>
-        <span class="orange"><%= posts[i].post_mbti %>,
-        <span class="black"><%= posts[i].user_name %></span>
-      </li>
-      <li class="borders">
-        <span class="gray"><%= posts[i].showing_date %>에 등록</span>
-      </li>
+    <script>
+      function going(num) {
+        console.log('클릭')
+        location.href = '/' + num
+      }
+    </script>
 
-      <br>
-      <textarea class="aligns addr" readonly><%= posts[i].post_description %></textarea>
-      
-      <br>
+    <div class="lists" id="<%= posts[i]._id %>">
 
-      <button class="ud" data-id="<%= posts[i]._id %>">DELETE</button>
+      <li id="<%= posts[i]._id %>" class="parant_infor">
+        <span class="orange">
+          [ <%= posts[i].post_types %> ], 
+        </span>
+        <span class="top_shape">
+          <%= posts[i].post_mbti %>,
+          <span class="black"><%= posts[i].user_name %></span>
+      </span>
+
+            <div class="borders" id="<%= posts[i]._id %>">
+              <span class="gray">
+                <%= posts[i].showing_date %>에 등록
+              </span>
+            </div>
+
+      </li>
+  
+      <div class="af">
+
+        <div class="titles_f" id="<%= posts[i]._id %>" onclick="going(id)">
+          <%= posts[i].post_title %>
+        </div>
+
+        <div class="brocks">
+          <button class=" ud" data-id="<%= posts[i]._id %>">✕</button>
+        </div>
+
+      </div>
 
     </div>
 
-      <br>
+    <br>
 
       <% } %>
-
-      <script>
-        var txtArea = $(".addr");
-        if (txtArea) {
-          txtArea.each(function () {
-            $(this).height(this.scrollHeight);
-          });
-        }
-      </script>
 
       <script>
 
@@ -72,7 +88,8 @@
             },
           })
           .done((result) => {
-            $(event_.target).parent('div').fadeOut();
+            alert('삭제되었습니다.');
+            location.href = '/'
           })
           .fail(function(xhr, textStatus, errorThrown) {
             alert('비밀번호를 잘못 입력하셨습니다.')
@@ -94,13 +111,48 @@
     color: black;
   }
 
+  .parant_infor {
+    width: 320px;
+    border-right: 1px solid gray;
+    display: inline-block;
+  }
+
+  .brocks {
+    display: inline-block;
+    width: 40px;
+    position: relative;
+    bottom: 2px;
+  }
+
   .orange {
     font-weight: 600;
-    color: rgb(4, 71, 255);
+    color: rgb(180, 180, 180);
     text-align: left;
   }
 
-  .aligns {
+  .af {
+   font-size: 110%;
+   font-weight: 600;
+   width: 460px;
+   position: relative;
+   bottom: 17px;
+   padding-top: 17px;
+   padding-bottom: 17px;
+   display: inline-block;
+   margin-left: 20px;
+  }
+
+  .titles_f {
+    width: 410px;
+    display: inline-block;
+  }
+
+  .top_shape {
+    font-weight: 600;
+    color: blue
+  }
+
+  .addr {
     background-color: rgb(250, 250, 250);
     text-align: left;
     font-family: 'NanumSquare', sans-serif;
@@ -108,9 +160,13 @@
     width: 500px;
     padding: none;
     border: none;
-    overflow: hidden;
+    overflow: show;
     line-height: 30px;
     resize: none;
+  }
+
+  .aligns {
+    display: none;
   }
 
   textarea:focus {
@@ -132,27 +188,22 @@
     text-decoration: none;
   }
 
-  .borders {
-    padding-bottom: 24px;
-    border-bottom: 1px solid gray
-  }
-
   .ud {
     transition-duration: 0.2s;
-    width: 100px;
-    height: 40px;
-    margin: 5px;
+    padding: 10px;
     border: none;
-    background-color: rgb(4, 71, 255);
-    color: white;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(240, 240, 240);
     border: 1px solid rgb(4, 71, 255);
-    border-radius: 10px;
+    border-radius: 50px;
   }
 
   .ud:hover {
     transition-duration: 0.2s;
     background-color:  rgba(4, 71, 255, 0.8);
     border: 1px solid rgba(4, 71, 255, 0.8);
+    color: white;
   }
 
   .lists {
@@ -160,12 +211,16 @@
     border-radius: 20px;
     padding: 20px;
     margin-bottom: 30px;
-    width: 500px;
+    width: 825px;
     line-height: 35px;
     display: inline-block;
     background-color: rgb(250, 250, 250);
     text-align: center;
     box-shadow: 2px 2px 2px rgb(200, 200, 200);
+    text-align: left;
+    padding-bottom: 0;
+    padding-right: 0;
+    display: inline-block;
   }
 
   .gray {
@@ -192,6 +247,7 @@
     border-bottom: 2px solid rgb(4, 71, 255);
     position: fixed;
     top: 0px;
+    z-index: 1;
   }
 
   .bar_content {

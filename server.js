@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient; 
+const { urlencoded } = require('body-parser');
 
 var db;
 
@@ -23,11 +24,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
-app.get('/write', function(req, res) {
+app.get('/', function (req, res) {
+  db.collection('user').find().toArray(function(err, result) {
+    res.render('../list.ejs', {
+      posts: result 
+    });
+  });
+});
+
+app.get('/write', function (req, res) {
   res.sendFile(__dirname + '/write.html')
 });
 
-app.delete('/editordelete', function(req, res) {
+app.delete('/editordelete', function (req, res) {
   req.body._id = parseInt(req.body._id);
   req.body.pwisit = parseInt(req.body.pwisit);
 
@@ -44,7 +53,7 @@ app.delete('/editordelete', function(req, res) {
       if (Number(pwi) == Number(req.body.pwisit)) {
         console.log(pwi)
         console.log(req.body.pwisit)
-        
+
         db.collection('user').deleteOne({ _id: tit }, function (err, result) {
           res.status(200).send({
             message: '보내긴 보냈는데 왜 안 뜨는 거임;;;;'
@@ -58,18 +67,14 @@ app.delete('/editordelete', function(req, res) {
       }
     }
   );
-  });
-
-app.get('/', function (req, res) {
-  db.collection('user').find().toArray(function(err, result) {
-    res.render('../list.ejs', {
-      posts: result 
-    });
-  });
 });
 
 app.get('/menu', function (req, res) {
   res.render('../menu.ejs');
+});
+
+app.get('/check', function (req, res) {
+  res.render('../check.ejs');
 });
 
 app.post('/add', function (req, res) {
@@ -102,7 +107,9 @@ app.post('/add', function (req, res) {
         user_name: req.body.name,
         user_password: req.body.password,
         post_description: req.body.description,
+        post_title: req.body.title,
         post_mbti: req.body.mbti_choose,
+        post_types: req.body.post_types,
         upload_time: result_time,
         showing_date: showing_result_time
       },
@@ -122,4 +129,35 @@ app.post('/add', function (req, res) {
   });
 
   res.sendFile(__dirname + '/add.html');
+});
+
+app.get('/:id', function (req, res) {
+  db.collection('user').findOne(
+    {
+      _id: Number(req.params.id)
+    },
+
+    function (err, result) {
+
+      var _id = req.params.id;
+      var user_name = result.user_name;
+      var user_password = result.user_password;
+      var post_description = result.post_description;
+      var post_title = result.post_title;
+      var post_mbti = result.post_mbti;
+      var post_types = result.post_types;
+      var showing_date = result.showing_date;
+
+      res.render('../numbers.ejs', {
+        _id: _id,
+        user_name: user_name,
+        user_password: user_password,
+        post_description: post_description,
+        post_title: post_title,
+        post_mbti: post_mbti,
+        post_types: post_types,
+        showing_date: showing_date
+      });
+      console.log(result)
+    });
 });

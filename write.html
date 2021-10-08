@@ -14,12 +14,15 @@
     <a href="/write">
       <li class="bar_content">작성하기</li>
     </a>
+    <a href="/check">
+      <li class="bar_content">검사하기</li>
+    </a>
   </div>
 
   <form class="form_send" action="/add" method="POST">
     <div class="form_box_first">
-      <div class="form_label">닉네임 (8글자 이내)</div>
-      <input type="text" class="form_input" name="name" maxlength="8">
+      <div class="form_label">닉네임 (10글자 이내)</div>
+      <input type="text" class="form_input" name="name" maxlength="10">
     </div>
 
     <div class="form_box_second">
@@ -28,8 +31,23 @@
       oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
     </div>
 
-    <div class="form_label_textarea">글 내용</div>
-    <textarea type="text_field" class="form_input_textarea" name="description"> </textarea>
+    <div class="form_box_third">
+      <div class="form_label_third">제목 (30자 이내)</div>
+      <input type="text" class="form_input_third" name="title" maxlength="30">
+    </div>
+
+    <div class="form_label_textarea">글 내용 (1,000자 이내)</div>
+    <textarea type="text_field" class="form_input_textarea" name="description" maxlength="1000"> </textarea>
+
+    <select name="post_types" class="choose_2">
+      <option value="일상">[ 일상 ]</option>
+      <option value="질문">[ 질문 ]</option>
+      <option value="음악">[ 음악 ]</option>
+      <option value="고민">[ 고민 ]</option>
+      <option value="공감">[ 공감 ]</option>
+      <option value="공부">[ 공부 ]</option>
+      <option value="연애">[ 연애 ]</option>
+    </select>
 
     <select name="mbti_choose" class="choose">
       <option value="전체 공개">전체 공개 게시판</option>
@@ -68,8 +86,21 @@
     font-family: 'NanumSquare', sans-serif;
   }
 
+  select {
+    transition-duration: 0.3s;
+    box-shadow: 2px 2px 2px rgb(200, 200, 200);
+  }
+
+  textarea {
+    box-shadow: 2px 2px 2px rgb(200, 200, 200);
+  }
+
+  input {
+    box-shadow: 2px 2px 2px rgb(200, 200, 200);
+  }
+
   .choose {
-    width: 180px;
+    width: 160px;
     font-size: 16px;
     padding: 10px;
     padding-left: 15px;
@@ -81,9 +112,28 @@
     border: none;
     border: 1px solid rgb(200, 200, 200);
     border-radius: 7px;
+    background-color: rgb(240, 240, 240);
+  }
+
+  .choose_2 {
+    width: 100px;
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    top: 1.5px;
+    margin-right: 25px;
+
+    border: none;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 7px;
+    background-color: rgb(240, 240, 240);
   }
 
   select:focus {
+    transition-duration: 0.3s;
+    border: 1px solid blue;
     outline: none;
   }
 
@@ -148,6 +198,12 @@
     text-align: left;
   }
 
+  .form_box_third {
+    width: 550px;
+    display: inline-block;
+    text-align: right;
+  }
+
   .form_box_second {
     width: 262px;
     display: inline-block;
@@ -167,6 +223,12 @@
     width: 249px;
   }
 
+  .form_label_third {
+    display: inline-block;
+    text-align: left;
+    width: 545px;
+  }
+
   .form_label_textarea {
     display: inline-block;
     text-align: left;
@@ -184,10 +246,23 @@
     color: rgb(80, 80, 80);
   }
 
+  .form_input_third {
+    position: relative;
+    right: 18px;
+    width: 500px;
+    padding: 13.5px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 12.5px;
+    font-size: 17px;
+    color: rgb(80, 80, 80);
+  }
+
   .form_input_textarea {
     width: 500px;
     padding: 13.5px;
-    height: 350px;
+    height: 250px;
     margin-bottom: 30px;
     margin-top: 10px;
     border: 1px solid rgb(180, 180, 180);
