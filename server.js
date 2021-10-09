@@ -50,7 +50,7 @@ app.delete('/editordelete', function (req, res) {
       var pwi = result.user_password
       var tit = result._id
 
-      if ((Number(pwi) == Number(req.body.pwisit)) || (Number(req.body.pwisit) == 'all.delete_admin)')) {
+      if ((Number(pwi) == Number(req.body.pwisit)) || (Number(req.body.pwisit) == 'all.delete_admin')) {
         console.log(pwi)
         console.log(req.body.pwisit)
 
@@ -77,7 +77,11 @@ app.get('/check', function (req, res) {
   res.render('../check.ejs');
 });
 
-app.post('/add', function (req, res) {
+app.get('/add', function (req, res) {
+  res.render('../add.ejs');
+});
+
+app.post('/ok', function (req, res) {
   const curr = new Date();
   const utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
   const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
