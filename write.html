@@ -21,7 +21,7 @@
     </a>
   </div>
 
-  <form class="form_send" action="/add" method="POST">
+  <form class="form_send" action="/add" method="POST" name="frm">
     <div class="form_box_first">
       <div class="form_label">닉네임 (10글자 이내)</div>
       <input type="text" class="form_input" name="name" maxlength="10">
@@ -97,17 +97,29 @@
 
   <script>
     function next_level() {
-      document.querySelector('.form_box_first').style.display = 'none';
-      document.querySelector('.form_box_second').style.display = 'none';
-      document.querySelector('.form_box_third').style.display = 'none';
-      document.querySelector('.choose').style.display = 'none';
-      document.querySelector('.choose_2').style.display = 'none';
-      document.querySelector('.form_submit2').style.display = 'none';
-      document.querySelector('.form_label_textarea').style.display = 'none';
-      document.querySelector('.form_input_textarea').style.display = 'none';
+      if (frm.name.value == "" || frm.name.value.length > 10) {
+        frm.name.focus(); alert("규칙에 맞는 닉네임을 입력해주세요 :)");
+      }
+      else if (frm.password.value == "" || frm.password.value.length > 6) {
+        frm.password.focus(); alert("규칙에 맞는 비밀번호를 입력해주세요 :)");
+      }
 
-      document.querySelector('.complete').style.display = 'block';
-      document.querySelector('.idds').style.display = 'inline-block';
+      else if (frm.title.value == "" || frm.title.value.length > 30) {
+        frm.title.focus(); alert("규칙에 맞는 제목으로 입력해주세요 :)");
+      }
+      else {
+        document.querySelector('.form_box_first').style.display = 'none';
+        document.querySelector('.form_box_second').style.display = 'none';
+        document.querySelector('.form_box_third').style.display = 'none';
+        document.querySelector('.choose').style.display = 'none';
+        document.querySelector('.choose_2').style.display = 'none';
+        document.querySelector('.form_submit2').style.display = 'none';
+        document.querySelector('.form_label_textarea').style.display = 'none';
+        document.querySelector('.form_input_textarea').style.display = 'none';
+
+        document.querySelector('.complete').style.display = 'block';
+        document.querySelector('.idds').style.display = 'inline-block';
+      }
     }
 
     function next_level2() {
