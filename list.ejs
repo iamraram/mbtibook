@@ -25,6 +25,33 @@
 
   <div class="mid_list">
 
+    <div class="lists lists2">
+    
+      <li class="parant_infor">
+        <span class="orange orange2">
+          커뮤니티 관리자
+        </span>
+    
+        <div class="borders">
+          <span class="gray">
+            10월 9일 21시 58분에 등록
+          </span>
+        </div>
+    
+      </li>
+    
+      <div class="af">
+    
+        <div class="titles_f" onclick="location.href='/notice'">
+          MBTI 커뮤니티 이용 안내
+        </div>
+    
+      </div>
+    
+    </div>
+    
+    <br>
+
     <% posts.reverse() %>
 
     <% for (var i=0; i < posts.length;  i ++) { %>
@@ -145,6 +172,12 @@
   .orange {
     font-weight: 600;
     color: rgb(180, 180, 180);
+    text-align: left;
+  }
+
+  .orange2 {
+    font-weight: 600;
+    color: rgb(167, 0, 0);
     text-align: left;
   }
 
@@ -277,6 +310,10 @@
     text-align: center;
     color: rgb(100, 100, 100);
     border-radius: 10px;
+  }
+
+    .lists2 {
+    background-color: rgb(235, 235, 235);
   }
 
   .bar_content:hover {

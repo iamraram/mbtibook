@@ -73,6 +73,10 @@ app.get('/menu', function (req, res) {
   res.render('../menu.ejs');
 });
 
+app.get('/notice', function (req, res) {
+  res.render('../notice.ejs');
+});
+
 app.get('/check', function (req, res) {
   res.render('../check.ejs');
 });
