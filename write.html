@@ -71,10 +71,62 @@
       <option value="ENFJ">ENFJ 게시판</option>
     </select>
 
-    <button type="submit" class="form_submit">저장</button>
+    <div class="complete">
+      <h2>글 작성을 완료하려면, 아래 내용을 읽어주세요.</h2>
+      <br>
+      <div class="desc">
+        다음 수칙을 지켜 글을 작성하셨는지 확인해주세요.
+        <br>
+        1. 본인이나 타인의 개인정보가 포함되어 있나요?
+        <br>
+        2. 타인을 비방하거나 혐오하는 표현을 사용했나요?
+        <br>
+        3. 혐오감 또는 불쾌감을 형성할 수 있는 글이나 사진을 첨부했나요? 
+        <br><br>
+        아래 버튼을 누르시면 최종 등록되거나 수정이 가능합니다.
+        <br>
+        <button type="submit" class="form_submit idds">저장</button>
+        <button type="button" onclick="next_level2();"  class="form_submit3">잠시만요!</button>
+      </div>
+    </div>
+
+    <div onclick="next_level();" class="form_submit2">다음</div>
   </form>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  <script>
+    function next_level() {
+      document.querySelector('.form_box_first').style.display = 'none';
+      document.querySelector('.form_box_second').style.display = 'none';
+      document.querySelector('.form_box_third').style.display = 'none';
+      document.querySelector('.choose').style.display = 'none';
+      document.querySelector('.choose_2').style.display = 'none';
+      document.querySelector('.form_submit2').style.display = 'none';
+      document.querySelector('.form_label_textarea').style.display = 'none';
+      document.querySelector('.form_input_textarea').style.display = 'none';
+
+      document.querySelector('.complete').style.display = 'block';
+      document.querySelector('.idds').style.display = 'inline-block';
+    }
+
+    function next_level2() {
+        document.querySelector('.form_box_first').style.display = 'inline-block';
+        document.querySelector('.form_box_second').style.display = 'inline-block';
+        document.querySelector('.form_box_third').style.display = 'inline-block';
+        document.querySelector('.choose').style.display = 'inline-block';
+        document.querySelector('.choose_2').style.display = 'inline-block';
+        document.querySelector('.form_submit2').style.display = 'inline-block';
+        document.querySelector('.form_label_textarea').style.display = 'block';
+        document.querySelector('.form_input_textarea').style.display = 'block';
+
+        document.querySelector('.complete').style.display = 'none';
+        document.querySelector('.idds').style.display = 'none';
+      }
+
+    document.querySelector('.complete').style.display = 'none';
+    document.querySelector('.idds').style.display = 'none';
+  </script>
 
 </body>
 
@@ -86,6 +138,14 @@
     margin: 0px;
     font-size: 18px;
     font-family: 'NanumSquare', sans-serif;
+  }
+
+  .onc {
+    display: inline-block;
+  }
+
+  button {
+    display: inline-block;
   }
 
   select {
@@ -115,6 +175,17 @@
     border: 1px solid rgb(200, 200, 200);
     border-radius: 7px;
     background-color: rgb(240, 240, 240);
+  }
+
+    .desc {
+    line-height: 50px;
+  }
+
+    .complete {
+    margin-top: 40px;
+    width: 530px;
+    text-align: left;
+    display: inline-block;
   }
 
   .choose_2 {
@@ -277,6 +348,29 @@
   .form_submit {
     margin-top: 25px;
     width: 90px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgb(4, 71, 255);
+    color: white;
+    border: 1px solid rgb(4, 71, 255);
+    border-radius: 7.5px;
+  }
+
+  .form_submit2 {
+    display: inline-block;
+    margin-top: 25px;
+    width: 70px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgb(4, 71, 255);
+    color: white;
+    border: 1px solid rgb(4, 71, 255);
+    border-radius: 7.5px;
+  }
+
+  .form_submit3 {
+    margin-top: 25px;
+    width: 130px;
     padding: 10px;
     font-size: 16px;
     background-color: rgb(4, 71, 255);
