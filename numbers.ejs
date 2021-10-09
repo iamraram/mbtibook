@@ -39,6 +39,7 @@
     <textarea class="addr" readonly><%= post_description %></textarea>
 
     <br><br><br>
+    <button class="od" onclick="javascript:history.back();"> ⇦ </button>
 
     <button class=" ud" data-id="<%= _id %>">✕</button>
 
@@ -102,7 +103,7 @@
       display: inline-block;
     }
   </style>
-  
+
 </body>
 
 <style>
@@ -192,6 +193,27 @@
     background-color: rgb(240, 240, 240);
     border: 1px solid rgb(4, 71, 255);
     border-radius: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .od {
+    transition-duration: 0.2s;
+    padding: 10px;
+    padding-left: 9px;
+    padding-right: 11px;
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(4, 71, 255);
+    border-radius: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    position: relative;
+    font-weight: 600;
   }
 
   .ud:hover {
@@ -253,6 +275,31 @@
 
   .bar_content:hover {
     background-color: rgb(180, 180, 180);
+  }
+
+  @media (max-width:850px) {
+    .nav_bar {
+      font-size: 16px;
+    }
+
+    .top_list {
+      line-height: 55px;
+      margin: 18px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    .bar_content {
+      transition-duration: 0.4s;
+      display: inline-block;
+      width: 75px;
+    }
+
+    .addr {
+      width: 320px;
+      padding: 15px;
+      font-size: 15px;
+    }
   }
 
 </style>

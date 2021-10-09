@@ -58,6 +58,8 @@
 
   <div class="include_box_2">
 
+        <div class="blocks3"> ㅤ</div>
+
     <div class="blocks2" onclick="javascript:breaking2()"> 글 태그: 일상 </div>
     <div class="blocks2" onclick="javascript:breaking2()"> 글 태그: 질문 </div>
     <div class="blocks2" onclick="javascript:breaking2()"> 글 태그: 음악 </div>
@@ -65,7 +67,6 @@
     <div class="blocks2" onclick="javascript:breaking2()"> 글 태그: 공감 </div>
     <div class="blocks2" onclick="javascript:breaking2()"> 글 태그: 공부 </div>
     <div class="blocks2" onclick="javascript:breaking2()"> 글 태그: 연애 </div>
-    <div class="blocks3"> ㅤ</div>
     <div class="blocks3"> ㅤ</div>
     <div class="blocks3"> ㅤ</div>
     <div class="blocks3"> ㅤ</div>
@@ -147,9 +148,11 @@
     border-radius: 10px;
     padding: 15px;
     text-align: center;
-    width: 350px;
+    width: 600px;
     margin-bottom: 20px;
     display: inline-block;
+    position: relative;
+    left: 35px;
     background-color:  rgb(252, 252, 252);
     box-shadow: 2px 2px 2px rgb(200, 200, 200);
   }
@@ -175,6 +178,7 @@
     width: 120px;
     margin-bottom: 20px;
     display: inline-block;
+    visibility: hidden;
   }
 
   .blocks_f:hover {
@@ -277,6 +281,40 @@
     background-color: rgb(180, 180, 180);
   }
 
+  @media (max-width:850px) {
+    .nav_bar {
+      font-size: 16px;
+    }
+
+    .bar_content {
+      transition-duration: 0.4s;
+      display: inline-block;
+      width: 75px;
+    }
+
+    .include_box {
+      width: 205px;
+    }
+
+    .blocks {
+      width: 170px;
+    }
+
+    .blocks2 {
+      width: 105px;
+    }
+
+    .blocks_link {
+      width: 313px;
+      position: relative;
+      left: 2px;
+      z-index: -1;
+    }
+
+    .include_box_2 {
+      width: 140px;
+    }
+  }
 </style>
 
 </html>

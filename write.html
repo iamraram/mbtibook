@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MBTIBOOK</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 </head>
 <body class="index_html">
@@ -23,8 +22,8 @@
 
   <form class="form_send" action="/add" method="POST" name="frm">
     <div class="form_box_first">
-      <div class="form_label">닉네임 (10글자 이내)</div>
-      <input type="text" class="form_input" name="name" maxlength="10">
+      <div class="form_label">닉네임 (9글자 이내)</div>
+      <input type="text" class="form_input" name="name" maxlength="9">
     </div>
 
     <div class="form_box_second">
@@ -34,12 +33,17 @@
     </div>
 
     <div class="form_box_third">
-      <div class="form_label_third">제목 (30자 이내)</div>
-      <input type="text" class="form_input_third" name="title" maxlength="30">
+      <div class="form_label_third">제목 (20자 이내)</div>
+      <input type="text" class="form_input_third" name="title" maxlength="20">
     </div>
+
+    <div class="form_box_fourth">
 
     <div class="form_label_textarea">글 내용 (1,000자 이내)</div>
     <textarea type="text_field" class="form_input_textarea" name="description" maxlength="1000"> </textarea>
+
+
+    </div>
 
     <select name="post_types" class="choose_2">
       <option value="일상">[ 일상 ]</option>
@@ -69,7 +73,7 @@
       <option value="ENTJ">ENTJ 게시판</option>
       <option value="ENFP">ENFP 게시판</option>
       <option value="ENFJ">ENFJ 게시판</option>
-    </select>
+    </select> 
 
     <div class="complete">
       <h2>글 작성을 완료하려면, 아래 내용을 읽어주세요.</h2>
@@ -90,9 +94,9 @@
       </div>
     </div>
 
-    <div onclick="next_level();" class="form_submit2">다음</div>
+    <div onclick="next_level();" class="form_submit2">다음</div> 
   </form>
-
+ 
   <div id="footer">
     Developer: LEE HARAM / Contant: slyram06@icloud.com
   </div>
@@ -107,19 +111,19 @@
       display: inline-block;
     }
   </style>
-  
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
   <script>
     function next_level() {
-      if (frm.name.value == "" || frm.name.value.length > 10) {
+      if (frm.name.value == "" || frm.name.value.length > 9) {
         frm.name.focus(); alert("규칙에 맞는 닉네임을 입력해주세요 :)");
       }
       else if (frm.password.value == "" || frm.password.value.length > 6) {
         frm.password.focus(); alert("규칙에 맞는 비밀번호를 입력해주세요 :)");
       }
 
-      else if (frm.title.value == "" || frm.title.value.length > 30) {
+      else if (frm.title.value == "" || frm.title.value.length > 20) {
         frm.title.focus(); alert("규칙에 맞는 제목으로 입력해주세요 :)");
       }
       else {
@@ -141,8 +145,8 @@
         document.querySelector('.form_box_first').style.display = 'inline-block';
         document.querySelector('.form_box_second').style.display = 'inline-block';
         document.querySelector('.form_box_third').style.display = 'inline-block';
-        document.querySelector('.choose').style.display = 'inline-block';
-        document.querySelector('.choose_2').style.display = 'inline-block';
+        document.querySelector('.choose').style.display = 'block';
+        document.querySelector('.choose_2').style.display = 'block';
         document.querySelector('.form_submit2').style.display = 'inline-block';
         document.querySelector('.form_label_textarea').style.display = 'block';
         document.querySelector('.form_input_textarea').style.display = 'block';
@@ -202,6 +206,10 @@
     border: 1px solid rgb(200, 200, 200);
     border-radius: 7px;
     background-color: rgb(240, 240, 240);
+    display: block;
+    left: 185px;
+        margin-top: 20px;
+    margin-bottom: 20px;
   }
 
     .desc {
@@ -229,6 +237,10 @@
     border: 1px solid rgb(200, 200, 200);
     border-radius: 7px;
     background-color: rgb(240, 240, 240);
+        display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    left: 215px;
   }
 
   select:focus {
@@ -288,8 +300,14 @@
     border-radius: 10px;
   }
 
+
   .bar_content:hover {
     background-color: rgb(180, 180, 180);
+  }
+  
+  .complete {
+    width: 350px;
+    font-size: 15px;
   }
 
   .form_box_first {
@@ -308,6 +326,19 @@
     width: 262px;
     display: inline-block;
     text-align: right;
+  }
+
+  .form_input_third {
+    position: relative;
+    right: 18px;
+    width: 500px;
+    padding: 13.5px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 12.5px;
+    font-size: 17px;
+    color: rgb(80, 80, 80);
   }
 
   .form_send {
@@ -337,19 +368,6 @@
 
   .form_input {
     width: 220px;
-    padding: 13.5px;
-    margin-bottom: 30px;
-    margin-top: 10px;
-    border: 1px solid rgb(180, 180, 180);
-    border-radius: 12.5px;
-    font-size: 17px;
-    color: rgb(80, 80, 80);
-  }
-
-  .form_input_third {
-    position: relative;
-    right: 18px;
-    width: 500px;
     padding: 13.5px;
     margin-bottom: 30px;
     margin-top: 10px;
@@ -408,6 +426,97 @@
 
   input[type=password] {
     letter-spacing: 8.5px;
+  }
+
+  @media (max-width:850px) {
+    .nav_bar {
+      font-size: 16px;
+      width: 100%;
+    }
+
+    form {
+      display: inline;
+    }
+
+    .bar_content {
+      transition-duration: 0.4s;
+      display: inline-block;
+      width: 75px;
+    }
+
+    .form_box_first, .form_box_second, .form_box_third, .form_box_fourth {
+      margin: 0;
+      display: inline-block;
+      width: 100%;
+      text-align: left;
+      margin-left: 10px;
+    }
+
+    .index_html {
+      display: inline;
+      text-align: center;
+      width: 300px;
+      position: relative;
+    }
+
+    .form_send {
+      width: 350px;
+      text-align: center;
+    }
+
+    .form_input, .form_input_third, .form_input_textarea {
+      width: 320px;
+    }
+
+    .complete {
+      width: 340px;
+      display: inline-block;
+      font-size: 14px;
+      margin-left: 15px;
+    }
+
+    h2 {
+      line-height: 50px;
+    }
+
+    .form_box_second {
+      padding-left: 0;
+      text-align: left;
+    }
+
+    .form_input_third {
+      position: inherit;
+    }
+
+    .form_box_third {
+      text-align: left;
+    }
+
+    .form_input_textarea {
+      position: inherit;
+    }
+
+    .choose, .choose_2 {
+      width: 200px;
+      display: block;
+      position: relative;
+      left: 85px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form_submit2 {
+      position: relative;
+      left: 12px;
+    }
+
+    .form_label_third {
+      width: 100%;
+    }
+
+    .form_label_textarea {
+      width: 100%;
+    }
   }
 
 </style>

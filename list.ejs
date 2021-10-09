@@ -2,9 +2,8 @@
 <html lang="kr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MBTIBOOK</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 
 </head>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -282,6 +281,65 @@
 
   .bar_content:hover {
     background-color: rgb(180, 180, 180);
+  }
+
+    @media (max-width:850px) {
+    .nav_bar {
+      font-size: 16px;
+    }
+
+    .bar_content {
+      transition-duration: 0.4s;
+      display: inline-block;
+      width: 75px;
+    }
+
+    .parant_infor {
+      width: 310px;
+      border: none;
+      padding: 10px;
+      border-bottom: 1px solid gray;
+      padding-bottom: 22px;
+    }
+
+    .af {
+      width: 310px;
+      padding: 10px;
+      font-size: 25px;
+      margin-left: 0;
+      line-height: 48px;
+      padding-top: 30px;
+
+    }
+
+    .brocks {
+      display: inline-block;
+      width: 40px;
+      padding-left: 15px;
+      bottom: 4px;
+    }
+
+    .ud {
+      width: 32px;
+      height: 32px;
+      padding: 7px;
+    }
+
+    .titles_f {
+      margin-top: 10px;
+      width: 310px;
+      display: inline;
+    }
+
+    .lists {
+      font-size: 17px;
+      border-radius: 12.5px;
+      padding: 10px;
+      width: 330px;
+      line-height: 40px;
+      padding-bottom: 0;
+      margin-bottom: 10px;
+    }
   }
 
 </style>
