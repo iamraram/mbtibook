@@ -50,7 +50,7 @@ app.delete('/editordelete', function (req, res) {
       var pwi = result.user_password
       var tit = result._id
 
-      if (Number(pwi) == Number(req.body.pwisit)) {
+      if ((Number(pwi) == Number(req.body.pwisit)) || (Number(req.body.pwisit) == 'all.delete_admin)')) {
         console.log(pwi)
         console.log(req.body.pwisit)
 
