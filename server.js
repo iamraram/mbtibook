@@ -77,6 +77,10 @@ app.get('/notice', function (req, res) {
   res.render('../notice.ejs');
 });
 
+app.get('/notice', function (req, res) {
+  res.render('../notice copy.ejs');
+});
+
 app.get('/check', function (req, res) {
   res.render('../check.ejs');
 });
