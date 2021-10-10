@@ -26,17 +26,6 @@
   </div>
 
   <li class="tops__">
-    <div class="back gray" onclick="location.href = '/'">
-      ◀️ 뒤로 가기
-    </div>
-    
-    <style>
-      .back {
-        display: block;
-        margin-bottom: 60px;
-      }
-    </style>
-
     <span class="gray">[ <%= post_types %> ],</span>
     <span class="orange"> <%= post_mbti %>,</span>
     <span class="black"> <%= user_name %> </span>
@@ -380,6 +369,10 @@
       margin-right: 10px;
     }
 
+    .bordersf {
+      margin-bottom: 0;
+    }
+
     .tops__, .bordersf {
       text-align: left;
       font-size: 15px;
@@ -388,6 +381,7 @@
     .top_list {
       margin-left: 20px;
       font-size: 18px;
+      margin-top: 0;
     }
 
     .index_html {
@@ -404,6 +398,15 @@
       text-align: center;
     }
 
+    .tops__ {
+      font-size: 17px;
+      margin-top: 80px;
+    }
+
+    .top_list {
+      font-size: 23px;
+    }
+
     .addr {
       width: 93%;
       padding: 1.5%;
@@ -411,6 +414,7 @@
       font-size: 14px;
       border-radius: 0;
       padding-left: 5%;
+      margin-top: 10px;
     }
   }
 
