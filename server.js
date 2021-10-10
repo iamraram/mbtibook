@@ -103,7 +103,7 @@ app.post('/add', function (req, res) {
   const showing_date = month + '월 ' + day + '일 ' + hour + '시 ' + minute + '분' 
 
   const ip = req.header["x-forwarded-for"] || req.connection.remoteAddress;
-  const ip_result = this.props.details ? this.props.details.substring(0, 5) : '';
+  const ip_result = String(ip).sunstr(0, 5)
 
   db.collection('counter').findOne(
     {
