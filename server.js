@@ -26,8 +26,23 @@ app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
   db.collection('user').find().toArray(function(err, result) {
+    const curr = new Date();
+      const utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
+      const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
+
+      const today = new Date(utc + KR_TIME_DIFF);
+
+      const year = today.getFullYear();
+      const month = today.getMonth() + 1;
+      const day = today.getDate();
+      const hour = today.getHours();
+      const minute = today.getMinutes();
+
+      const result_time = year + '' + month + '' + day + '' + hour + '' + minute
+
     res.render('../list.ejs', {
-      posts: result 
+      posts: result,
+      times: result_time
     });
   });
 });
@@ -97,13 +112,9 @@ app.post('/add', function (req, res) {
   const day = today.getDate();
   const hour = today.getHours();
   const minute = today.getMinutes(); 
-  const second = today.getSeconds();
-  const msecond = today.getMilliseconds();
 
   const result_time = year + '' + month + '' + day + ''
-                    + hour + '' + minute + '' + second + '' + msecond
-
-  const showing_result_time = month + '월 ' + day + '일 ' + hour + '시 ' + minute + '분'
+                    + hour + '' + minute 
 
   db.collection('counter').findOne(
     {
@@ -122,8 +133,7 @@ app.post('/add', function (req, res) {
         post_title: req.body.title,
         post_mbti: req.body.mbti_choose,
         post_types: req.body.post_types,
-        upload_time: result_time,
-        showing_date: showing_result_time
+        upload_time: result_time
       },
 
       function (err, result) {
@@ -151,6 +161,20 @@ app.get('/posts/:id', function (req, res) {
 
     function (err, result) {
 
+      const curr = new Date();
+      const utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
+      const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
+
+      const today = new Date(utc + KR_TIME_DIFF);
+
+      const year = today.getFullYear();
+      const month = today.getMonth() + 1;
+      const day = today.getDate();
+      const hour = today.getHours();
+      const minute = today.getMinutes();
+
+      const result_time = year + '' + month + '' + day + '' + hour + '' + minute
+
       var _id = req.params.id;
       var user_name = result.user_name;
       var user_password = result.user_password;
@@ -158,7 +182,7 @@ app.get('/posts/:id', function (req, res) {
       var post_title = result.post_title;
       var post_mbti = result.post_mbti;
       var post_types = result.post_types;
-      var showing_date = result.showing_date;
+      var upload_time = result.upload_time;  
 
       res.render('../numbers.ejs', {
         _id: _id,
@@ -168,7 +192,9 @@ app.get('/posts/:id', function (req, res) {
         post_title: post_title,
         post_mbti: post_mbti,
         post_types: post_types,
-        showing_date: showing_date
+        upload_time: upload_time,
+
+        times: result_time
       });
       console.log(result)
     });

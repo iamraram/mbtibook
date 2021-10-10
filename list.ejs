@@ -25,6 +25,7 @@
   </div>
 
   <h1 class="top_list">전체 공개 게시판</h1>
+  <h3 class="gray">- Beta Service -</h3>
 
   <div class="mid_list">
 
@@ -34,12 +35,6 @@
         <span class="orange orange2">
           커뮤니티 관리자
         </span>
-    
-        <div class="borders">
-          <span class="gray">
-            10월 9일 21시 58분에 등록
-          </span>
-        </div>
     
       </li>
     
@@ -61,12 +56,6 @@
         <span class="orange orange2">
           커뮤니티 관리자
         </span>
-    
-        <div class="borders">
-          <span class="gray">
-            10월 10일 8시 30분에 등록
-          </span>
-        </div>
     
       </li>
     
@@ -97,16 +86,16 @@
 
       <li id="<%= posts[i]._id %>" class="parant_infor">
         <span class="orange">
-          [ <%= posts[i].post_types %> ], 
+          [ <%= posts[i].post_types %> ] ·
         </span>
         <span class="top_shape">
-          <%= posts[i].post_mbti %>,
-          <span class="black"><%= posts[i].user_name %></span>
+          <%= posts[i].post_mbti %> ·
+          <span class="black"><%= posts[i].user_name %> · </span>
       </span>
 
             <div class="borders" id="<%= posts[i]._id %>">
               <span class="gray">
-                <%= posts[i].showing_date %>에 등록
+                <%= Number(times) - (Number(posts[i].upload_time)) + 1 %>분 전
               </span>
             </div>
 
@@ -116,10 +105,6 @@
 
         <div class="titles_f" id="<%= posts[i]._id %>" onclick="going(id)">
           <%= posts[i].post_title %>
-        </div>
-
-        <div class="brocks">
-          <button class=" ud" data-id="<%= posts[i]._id %>">✕</button>
         </div>
 
       </div>
@@ -187,9 +172,12 @@
   }
 
   .parant_infor {
-    width: 320px;
+    font-size: 13px;
+    width: 390px;
     border-right: 1px solid gray;
     display: inline-block;
+    position: relative;
+    bottom: 20px
   }
 
   .brocks {
@@ -211,10 +199,14 @@
     text-align: left;
   }
 
+  .borders {
+    display: inline;
+  }
+
   .af {
    font-size: 110%;
    font-weight: 600;
-   width: 460px;
+   width: 400px;
    position: relative;
    bottom: 17px;
    padding-top: 17px;
@@ -291,7 +283,7 @@
     border: 1px solid gray;
     border-radius: 20px;
     padding: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     width: 825px;
     line-height: 35px;
     display: inline-block;
@@ -302,6 +294,7 @@
     padding-bottom: 0;
     padding-right: 0;
     display: inline-block;
+    height: 50px;
   }
 
   .gray {
@@ -361,35 +354,47 @@
       width: 75px;
     }
 
+    .borders {
+      display: inline;
+    }
+
     .parant_infor {
-      width: 310px;
+      width: 342px;
       border: none;
-      padding: 10px;
+      padding: 5px;
+      height: 30px;
       border-bottom: 1px solid gray;
-      padding-bottom: 22px;
+      padding-bottom: 15px;
+      padding-left: 10px;
+      font-size: 11px;
+      position: inherit;
     }
 
     .af {
       width: 310px;
       padding: 10px;
-      font-size: 25px;
+      font-size: 17.5px;
       margin-left: 0;
       line-height: 48px;
-      padding-top: 30px;
-
+      padding-top: 17px;
+      padding-bottom: 0px;
     }
+
+    
 
     .brocks {
       display: inline-block;
       width: 40px;
       padding-left: 15px;
       bottom: 4px;
+      font-size: 13px;
     }
 
     .ud {
-      width: 32px;
-      height: 32px;
+      width: 20px;
+      height: 20px;
       padding: 7px;
+      font-size: 13px;
     }
 
     .titles_f {
@@ -399,11 +404,12 @@
     }
 
     .lists {
-      font-size: 17px;
+      font-size: 11px;
       border-radius: 12.5px;
-      padding: 10px;
-      width: 330px;
+      padding: 2px;
+      width: 95%;
       line-height: 40px;
+      height: 106px;
       padding-bottom: 0;
       margin-bottom: 10px;
     }

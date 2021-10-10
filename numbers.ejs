@@ -26,6 +26,17 @@
   </div>
 
   <li class="tops__">
+    <div class="back gray" onclick="location.href = '/'">
+      ◀️ 뒤로 가기
+    </div>
+    
+    <style>
+      .back {
+        display: block;
+        margin-bottom: 60px;
+      }
+    </style>
+
     <span class="gray">[ <%= post_types %> ],</span>
     <span class="orange"> <%= post_mbti %>,</span>
     <span class="black"> <%= user_name %> </span>
@@ -33,7 +44,7 @@
   
   <li class="bordersf">
     <span class="grayi">
-      <%= showing_date %>에 등록
+      <%= Number(times) - (Number(upload_time)) + 1 %>분 전
     </span>
   </li>
 
@@ -42,16 +53,17 @@
     <textarea class="addr" readonly><%= post_description %></textarea>
 
     <br><br><br>
-    <button class="od" onclick="javascript:history.back();"> ⇦ </button>
 
-    <button class=" ud" data-id="<%= _id %>">✕</button>
+    <div class="ccc">
+      <button class=" ud" data-id="<%= _id %>" onclick="ddel()"> 삭제하기 </button>
+    </div>
 
       <script>
         var txtArea = $(".addr");
-        var a = 150;
+        var a = 400;
         if (txtArea) {
           txtArea.each(function () {
-            a += 10;
+            a += 1;
             $(this).height(this.scrollHeight + a);
           });
         }
@@ -63,10 +75,82 @@
 
       <br>
 
+      <div class="modals_out">
+        <div class="modals">
+          확인을 누르시면 글이 삭제됩니다. <br>
+          삭제된 글은 복구가 불가능합니다. <br>
+          글 작성시 입력한 비밀번호를 적어주세요.
+          <input type="password" class="pwpw" maxlength="6">
+          <button class="btns" data-id="<%= _id %>"> 확인 </button>
+          <div class="gray" onclick="nono()">삭제 안 할래요</div>
+        </div>
+      </div>
+
+      <script>
+        function ddel() {
+          document.querySelector('.modals_out').style.display = 'block'
+          }
+
+          function nono() {
+            document.querySelector('.modals_out').style.display = 'none'
+          }
+      </script>
+
+      <style>
+
+          input[type=password] {
+            letter-spacing: 8.5px;
+          }
+
+          .btns {
+            background-color: rgb(250, 250, 250);
+            border: 1px solid gray;
+            border-radius: 15px;
+            padding: 10px;
+            width: 80px;
+          }
+
+          input:focus {
+            outline: none;
+          }
+
+          .pwpw {
+            width: 50%;
+            margin: 20px;
+            margin-left: 0;
+            padding: 9px;
+            padding-left: 15px;
+            border: 1px solid gray;
+            border-radius: 15px;
+          }
+
+        div {
+          box-sizing: border-box;
+        }
+
+        .modals {
+           width: 100%;
+           background: white;
+           padding: 20px;
+           font-size: 13px;
+           line-height: 35px;
+           border-radius: 20px;
+        }
+
+        .modals_out {
+          width: 100%;
+          height: 300px;
+          background: rgba(0,0,0,0.5);
+          position: absolute;
+          padding: 20px;
+          display: none
+        }
+      </style>
+
       <script>
 
-        $('.ud').click(function(event_) {
-          var pwisit = prompt('글 작성시 이용한 비밀번호를 입력해주세요.')
+        $('.btns').click(function(event_) {
+          var pwisit = $('.pwpw').val();
           var 글번호 = event_.target.dataset.id; 
           var 지금누른거 = $(this);
 
@@ -190,14 +274,19 @@
     transition-duration: 0.2s;
     padding: 10px;
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 90px;
     margin-bottom: 20px;
     background-color: rgb(240, 240, 240);
     border: 1px solid rgb(4, 71, 255);
-    border-radius: 50px;
+    border-radius: 10px;
     margin-left: 20px;
     margin-right: 20px;
+  }
+
+  .ccc {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
   }
 
   .od {
@@ -230,7 +319,6 @@
     border: 1px solid gray;
     border-radius: 20px;
     padding: 20px;
-    margin-bottom: 30px;
     width: 500px;
     line-height: 35px;
     display: inline-block;
@@ -292,16 +380,37 @@
       margin-right: 10px;
     }
 
+    .tops__, .bordersf {
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .top_list {
+      margin-left: 20px;
+      font-size: 18px;
+    }
+
+    .index_html {
+      text-align: left;
+    }
+
     .bar_content {
       transition-duration: 0.4s;
       display: inline-block;
       width: 75px;
     }
 
+    #footer {
+      text-align: center;
+    }
+
     .addr {
-      width: 320px;
-      padding: 15px;
-      font-size: 15px;
+      width: 93%;
+      padding: 1.5%;
+      padding-top: 15px;
+      font-size: 14px;
+      border-radius: 0;
+      padding-left: 5%;
     }
   }
 

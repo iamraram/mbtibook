@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="kr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MBTIBOOK | MBTI 커뮤니티</title>
   <meta name="description" content="MBTIBOOK은 모든 사람들이 MBTI를 통해 소통할 수 있는 세상을 꿈꿉니다.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="uV9BOZeqQvXO9nPeXtFusXHbbkUv7vbWO_oFA5GM8_U" />
   <meta name="google-site-verification" content="ScmYd8v-b_D7gaFyZ5T736rS5dLtACJSW5FBwk8UBrQ" />
 
 </head>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
 <body class="index_html">
 
   <div class="nav_bar">
@@ -27,30 +26,30 @@
   </div>
 
   <li class="tops__">
-    <span class="orange orange2">
-      커뮤니티 관리자
-    </span>
+        <div class="back gray" onclick="location.href = '/'">
+          ◀️ 뒤로 가기
+        </div>
+        
+        <style>
+          .back {
+            display: block;
+            margin-bottom: 60px;
+          }
+        </style>
+    <span class="orange orange2"> 커뮤니티 관리자 </span>
   </li>
 
-  <li class="bordersf">
-    <span class="grayi">
-      10월 9일 21시 58분에 등록
-    </span>
-  </li>
+    <h1 class="top_list">MBTI 커뮤니티 이용 안내</h1>
 
-  <h1 class="top_list">
-    MBTI 커뮤니티 이용 안내
-  </h1>
-
-  <textarea class="addr" readonly>MBTI 커뮤니티를 이용해주셔서 감사합니다!
+    <textarea class="addr" readonly>MBTI 커뮤니티를 이용해주셔서 감사합니다!
 그런데 만약에 아래처럼 글 쓰면 제가 가차없이 바로 그 자리에서 삭제해드림.
-
+    
 1. 잔임함, 선정성, 심각한 욕설, 특정 대상이나 인물을 비하하는 내용이나 용어, 사회적 이슈에 관한 과도한 개인적, 정치적 견해 등이 포함된 게시물
 2. 반복적으로 업로드된 게시물로, 도배의 우려가 있다고 판단되는 게시물
-
+    
 다른 건 관리자가 임의로 삭제 안 해요 :)
-아래는 2021년 10월 9일 이후로 천천히 추가될 기능들입니다! 
-
+아래는 2021년 10월 9일 이후로 천천히 추가될 기능들입니다!
+    
 1. 게시물 수정하기, 게시물 링크 복사하기
 2. 게시물에 댓글 달기, 댓글 수정하기
 3. 로그인 기능
@@ -58,52 +57,51 @@
 5. 로그인한 유저를 대상으로 한 MBTI 검사 그래프
 6. 로그인한 유저를 대상으로 한 게시물 저장 기능
 7. 사진 및 동영상 업로드
-
+    
 또한 iOS, iPadOS, macOS에서 게시물이 삭제되지 않는 현상이 발생하고 있어요.
 애플 특징인지; 뭔가를 수정해야 하나봅니다.
-
+    
 (아이폰 쓰는데 만약 글 쓴 거 삭제하고 싶으시면 바로 개발자한테 인스타그램으로 디엠 주세요 알아서 삭제해드림 ㅎㅎ @915ramlee)
-
+    
 할 게 많은데 굉장히 번거로우니까 시험 끝나면 하겠습니다.
-
+    
 그럼 재밌게 써 주시고 안녕!
 
 
+    </textarea>
 
+    <br><br><br>
 
+      <script>
+        var txtArea = $(".addr");
+        var a = 400;
+        if (txtArea) {
+          txtArea.each(function () {
+            a += 1;
+            $(this).height(this.scrollHeight + a);
+          });
+        }
 
+        a = 0;
+      </script>
 
+    </div>
 
-  </textarea>
-    
-  <br><br><br>
-  <button class="od" onclick="javascript:history.back();"> ⇦ </button>
+      <br>
 
-  </div>
+      <script>
+        function ddel() {
+          document.querySelector('.modals_out').style.display = 'block'
+          }
 
-  <br>
+          function nono() {
+            document.querySelector('.modals_out').style.display = 'none'
+          }
+      </script>
 
-  </div>
+      <style>
 
-  <div id="footer">
-    Developer: LEE HARAM / Contant: slyram06@icloud.com
-  </div>
-
-  <style>
-    #footer {
-      margin-top: 100px;
-      margin-bottom: 100px;
-      width: 100%;
-      font-size: 16px;
-      color: rgb(160, 160, 160);
-      display: inline-block;
-    }
-  </style>
-
-</body>
-
-<style>
-  @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+      @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
 
   .black {
     color: black;
@@ -115,13 +113,7 @@
     color: rgb(4, 71, 255);
     text-align: left;
   }
-
-  .orange2 {
-    font-weight: 600;
-    color: rgb(167, 0, 0);
-    text-align: left;
-  }
-
+  
   .gray {
     color: rgb(180, 180, 180);
     font-weight: 600;
@@ -136,9 +128,9 @@
   }
 
   .af {
-    margin-top: 32px;
-    font-size: 120%;
-    font-weight: 600;
+   margin-top: 32px;
+   font-size: 120%;
+   font-weight: 600;
   }
 
   .addr {
@@ -157,7 +149,6 @@
     border-radius: 30px;
     box-shadow: 2px 2px 2px rgb(200, 200, 200);
     border: 1px solid gray;
-    height: 1000px;
   }
 
 
@@ -189,14 +180,19 @@
     transition-duration: 0.2s;
     padding: 10px;
     border: none;
-    width: 40px;
-    height: 40px;
+    width: 90px;
     margin-bottom: 20px;
     background-color: rgb(240, 240, 240);
     border: 1px solid rgb(4, 71, 255);
-    border-radius: 50px;
+    border-radius: 10px;
     margin-left: 20px;
     margin-right: 20px;
+  }
+
+  .ccc {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
   }
 
   .od {
@@ -220,7 +216,7 @@
 
   .ud:hover {
     transition-duration: 0.2s;
-    background-color: rgba(4, 71, 255, 0.8);
+    background-color:  rgba(4, 71, 255, 0.8);
     border: 1px solid rgba(4, 71, 255, 0.8);
     color: white;
   }
@@ -242,12 +238,14 @@
   .gray {
     color: rgb(200, 200, 200);
   }
-
+  
   .mid_list {
     margin-top: 50px;
   }
+  
+  .top_list {
 
-  .top_list {}
+  }
 
   .index_html {
     text-align: center;
@@ -289,18 +287,41 @@
       margin-right: 10px;
     }
 
+    .tops__, .bordersf {
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .top_list {
+      margin-left: 20px;
+      font-size: 18px;
+    }
+
+    .index_html {
+      text-align: left;
+    }
+
     .bar_content {
       transition-duration: 0.4s;
       display: inline-block;
       width: 75px;
     }
 
+    #footer {
+      text-align: center;
+    }
+
     .addr {
-      width: 320px;
-      padding: 15px;
-      font-size: 15px;
+      width: 93%;
+      padding: 1.5%;
+      padding-top: 15px;
+      font-size: 14px;
+      border-radius: 0;
+      padding-left: 5%;
     }
   }
+
 </style>
 
 </html>
+
