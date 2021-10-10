@@ -97,6 +97,7 @@ app.post('/add', function (req, res) {
   const day = today.getDate();
   const hour = today.getHours();
   const minute = today.getMinutes(); 
+  const second = today.getSeconds();
 
   const result_time = year + '' + month + '' + day + '' + hour + '' + minute 
   const showing_date = month + '월 ' + day + '일 ' + hour + '시 ' + minute + '분' 
@@ -123,7 +124,7 @@ app.post('/add', function (req, res) {
       },
 
       function (err, result) {
-        console.log('Complete Upload!')
+        console.log('누군가가' + showing_date + second + '초에' + req.params.id + '번째 게시물을 등록했습니다.')
 
         db.collection('counter').updateOne(
           { name: '게시물 갯수' },
@@ -153,8 +154,21 @@ app.get('/posts/:id', function (req, res) {
       var post_title = result.post_title;
       var post_mbti = result.post_mbti;
       var post_types = result.post_types;
-      var showing_date = result.showing_date
-;  
+      var showing_date = result.showing_date;
+
+      const curr = new Date();
+      const utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
+      const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
+
+      const today = new Date(utc + KR_TIME_DIFF);
+
+      const month = today.getMonth() + 1;
+      const day = today.getDate();
+      const hour = today.getHours();
+      const minute = today.getMinutes(); 
+      const second = today.getSeconds();
+
+      const re = month + '월 ' + day + '일 ' + hour + '시 ' + minute + '분 ' + second + '초'
 
       res.render('../numbers.ejs', {
         _id: _id,
@@ -166,6 +180,6 @@ app.get('/posts/:id', function (req, res) {
         post_types: post_types,
         showing_date: showing_date
       });
-      console.log(result)
+      console.log('누군가가' + re + '에' + req.params.id + '번째 게시물을 조회했습니다.')
     });
 });
