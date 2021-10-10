@@ -102,6 +102,9 @@ app.post('/add', function (req, res) {
   const result_time = year + '' + month + '' + day + '' + hour + '' + minute 
   const showing_date = month + '월 ' + day + '일 ' + hour + '시 ' + minute + '분' 
 
+  const ip = req.header["x-forwarded-for"] || req.connection.remoteAddress;
+  const ip_result = substring(0, 5)
+
   db.collection('counter').findOne(
     {
       name: '게시물 갯수'
@@ -120,7 +123,8 @@ app.post('/add', function (req, res) {
         post_mbti: req.body.mbti_choose,
         post_types: req.body.post_types,
         upload_time: result_time,
-        showing_date: showing_date
+        showing_date: showing_date,
+        ip_result: ip_result
       },
 
       function (err, result) {
