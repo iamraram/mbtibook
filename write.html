@@ -25,8 +25,8 @@
 
   <form class="form_send" action="/add" method="POST" name="frm">
     <div class="form_box_first">
-      <div class="form_label">닉네임 (9글자 이내)</div>
-      <input type="text" class="form_input" name="name" maxlength="9">
+      <div class="form_label">닉네임 (8글자 이내)</div>
+      <input type="text" class="form_input" name="name" maxlength="8">
     </div>
 
     <div class="form_box_second">
@@ -36,8 +36,8 @@
     </div>
 
     <div class="form_box_third">
-      <div class="form_label_third">제목 (20자 이내)</div>
-      <input type="text" class="form_input_third" name="title" maxlength="20">
+      <div class="form_label_third">제목 (18자 이내)</div>
+      <input type="text" class="form_input_third" name="title" maxlength="18">
     </div>
 
     <div class="form_box_fourth">
@@ -119,14 +119,14 @@
 
   <script>
     function next_level() {
-      if (frm.name.value == "" || frm.name.value.length > 9) {
+      if (frm.name.value == "" || frm.name.value.length > 8) {
         frm.name.focus(); alert("규칙에 맞는 닉네임을 입력해주세요 :)");
       }
       else if (frm.password.value == "" || frm.password.value.length > 6) {
         frm.password.focus(); alert("규칙에 맞는 비밀번호를 입력해주세요 :)");
       }
 
-      else if (frm.title.value == "" || frm.title.value.length > 20) {
+      else if (frm.title.value == "" || frm.title.value.length > 18) {
         frm.title.focus(); alert("규칙에 맞는 제목으로 입력해주세요 :)");
       }
       else {

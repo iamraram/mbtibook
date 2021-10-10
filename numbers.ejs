@@ -26,6 +26,17 @@
   </div>
 
   <li class="tops__">
+    <div class="back gray" onclick="location.href = '/'">
+      ◀️ 뒤로 가기
+    </div>
+    
+    <style>
+      .back {
+        display: block;
+        font-size: 14.5px;
+        margin-bottom: 30px;
+      }
+    </style>
     <span class="gray">[ <%= post_types %> ],</span>
     <span class="orange"> <%= post_mbti %>,</span>
     <span class="black"> <%= user_name %> </span>
@@ -33,7 +44,7 @@
   
   <li class="bordersf">
     <span class="grayi">
-      <%= Number(times) - (Number(upload_time)) + 1 %>분 전
+      <%= showing_date %>에 등록
     </span>
   </li>
 
