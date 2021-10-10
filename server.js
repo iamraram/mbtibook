@@ -102,7 +102,11 @@ app.post('/add', function (req, res) {
   const result_time = year + '' + month + '' + day + '' + hour + '' + minute 
   const showing_date = month + '월 ' + day + '일 ' + hour + '시 ' + minute + '분' 
 
-  const ip = req.header["x-forwarded-for"] || req.connection.remoteAddress;
+  var ip = req.header["x-forwarded-for"] || req.connection.remoteAddress;
+  var strs = String(ip).split(':');
+
+  var strs2 = String(strs[4]).split('.');
+  var ip_result = strs2[1] + '.' + strs2[2]
 
   db.collection('counter').findOne(
     {
@@ -123,7 +127,7 @@ app.post('/add', function (req, res) {
         post_types: req.body.post_types,
         upload_time: result_time,
         showing_date: showing_date,
-        ip_result: ip
+        ip_result: ip_result
       },
 
       function (err, result) {
