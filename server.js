@@ -103,7 +103,6 @@ app.post('/add', function (req, res) {
   const showing_date = month + '월 ' + day + '일 ' + hour + '시 ' + minute + '분' 
 
   const ip = req.header["x-forwarded-for"] || req.connection.remoteAddress;
-  const ip_result = String(ip).sunstr(0, 5)
 
   db.collection('counter').findOne(
     {
@@ -124,7 +123,7 @@ app.post('/add', function (req, res) {
         post_types: req.body.post_types,
         upload_time: result_time,
         showing_date: showing_date,
-        ip_result: ip_result
+        ip_result: ip
       },
 
       function (err, result) {
