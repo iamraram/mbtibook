@@ -106,7 +106,7 @@ app.post('/add', function (req, res) {
   var strs = String(ip).split(':');
 
   var strs2 = String(strs[3]).split('.');
-  var ip_result = strs2[1] + '.' + strs2[2]
+  var ip_result = strs2[0] + '.' + strs2[1]
 
 
   console.log(ip)
