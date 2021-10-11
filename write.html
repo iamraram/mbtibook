@@ -26,7 +26,7 @@
   <form class="form_send" action="/add" method="POST" name="frm">
     <div class="form_box_first">
       <div class="form_label">닉네임 (8글자 이내)</div>
-      <input type="text" class="form_input" name="name" maxlength="8">
+      <input type="text" class="form_input" name="name" maxlength="8" placeholder="작성하지 않으면 '익명'">
     </div>
 
     <div class="form_box_second">
@@ -120,7 +120,7 @@
 
   <script>
     function next_level() {
-      if (frm.name.value == "" || frm.name.value.length > 8) {
+      if (frm.name.value.length > 8) {
         frm.name.focus(); alert("규칙에 맞는 닉네임을 입력해주세요 :)");
       }
       else if (frm.password.value == "" || frm.password.value.length > 6) {

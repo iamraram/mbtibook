@@ -108,7 +108,6 @@ app.post('/add', function (req, res) {
   var strs2 = String(strs[3]).split('.');
   var ip_result = strs2[0] + '.' + strs2[1]
 
-
   console.log(ip)
   console.log(strs)
   console.log(strs2)
@@ -122,32 +121,65 @@ app.post('/add', function (req, res) {
   function(err, result) {
     var total = result.totalPost;
 
-    db.collection('user').insertOne(
-      {
-        _id: total + 1,
-        user_name: req.body.name,
-        user_password: req.body.password,
-        post_description: req.body.description,
-        post_title: req.body.title,
-        post_mbti: req.body.mbti_choose,
-        post_types: req.body.post_types,
-        upload_time: result_time,
-        showing_date: showing_date,
-        ip_result: ip_result
-      },
+    if (req.body.name == null || req.body.name == '') {
 
-      function (err, result) {
-        console.log('누군가가' + showing_date + second + '초에' + req.params.id + '번째 게시물을 등록했습니다.')
+      db.collection('user').insertOne(
+        {
+          _id: total + 1,
+          user_name: '익명',
+          user_password: req.body.password,
+          post_description: req.body.description,
+          post_title: req.body.title,
+          post_mbti: req.body.mbti_choose,
+          post_types: req.body.post_types,
+          upload_time: result_time,
+          showing_date: showing_date,
+          ip_result: ip_result
+        },
 
-        db.collection('counter').updateOne(
-          { name: '게시물 갯수' },
-          { $inc: { totalPost: 1 } } , 
-          function(err, result) {
-            
-          }
-        )
+        function (err, result) {
+          console.log('누군가가' + showing_date + second + '초에' + req.params.id + '번째 게시물을 등록했습니다.')
 
-      });
+          db.collection('counter').updateOne(
+            { name: '게시물 갯수' },
+            { $inc: { totalPost: 1 } },
+            function (err, result) {
+
+            }
+          )
+
+        });
+    }  
+
+    else {
+      db.collection('user').insertOne(
+        {
+          _id: total + 1,
+          user_name: req.body.name,
+          user_password: req.body.password,
+          post_description: req.body.description,
+          post_title: req.body.title,
+          post_mbti: req.body.mbti_choose,
+          post_types: req.body.post_types,
+          upload_time: result_time,
+          showing_date: showing_date,
+          ip_result: ip_result
+        },
+
+        function (err, result) {
+          console.log('누군가가' + showing_date + second + '초에' + req.params.id + '번째 게시물을 등록했습니다.')
+
+          db.collection('counter').updateOne(
+            { name: '게시물 갯수' },
+            { $inc: { totalPost: 1 } },
+            function (err, result) {
+
+            }
+          )
+
+        });
+    } 
+
   });
 
   res.sendFile(__dirname + '/add.html');
@@ -168,6 +200,7 @@ app.get('/posts/:id', function (req, res) {
       var post_mbti = result.post_mbti;
       var post_types = result.post_types;
       var showing_date = result.showing_date;
+      var ip_result = result.ip_result
 
       const curr = new Date();
       const utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
@@ -191,7 +224,8 @@ app.get('/posts/:id', function (req, res) {
         post_title: post_title,
         post_mbti: post_mbti,
         post_types: post_types,
-        showing_date: showing_date
+        showing_date: showing_date,
+        ip_result: ip_result
       });
       console.log('누군가가' + re + '에' + req.params.id + '번째 게시물을 조회했습니다.')
     });
