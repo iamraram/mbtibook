@@ -105,7 +105,7 @@ app.post('/add', function (req, res) {
   var ip = req.header["x-forwarded-for"] || req.connection.remoteAddress;
   var strs = String(ip).split(':');
 
-  var strs2 = String(strs[4]).split('.');
+  var strs2 = String(strs[3]).split('.');
   var ip_result = strs2[1] + '.' + strs2[2]
 
 
