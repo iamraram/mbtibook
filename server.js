@@ -108,6 +108,12 @@ app.post('/add', function (req, res) {
   var strs2 = String(strs[4]).split('.');
   var ip_result = strs2[1] + '.' + strs2[2]
 
+
+  console.log(ip)
+  console.log(strs)
+  console.log(strs2)
+  console.log(ip_result)
+
   db.collection('counter').findOne(
     {
       name: '게시물 갯수'
