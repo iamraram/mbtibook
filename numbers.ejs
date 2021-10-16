@@ -47,9 +47,8 @@
       <%= showing_date %>
     </span>
   </li>
-
+    <h3 class="a_list gray">조회수: <%= view %></h3>
     <h1 class="top_list"><%= post_title %></h1>
-    <h3 class="top_list gray">조회수: <%= view %></h3>
 
     <textarea class="addr" readonly><%= post_description %></textarea>
 
@@ -291,6 +290,12 @@
     display: inline-block;
   }
 
+  .a_list {
+    text-align: center;
+    font-size: 16px;
+    color: rgb(180, 180, 180);
+  }
+
   .od {
     transition-duration: 0.2s;
     padding: 10px;
@@ -419,6 +424,13 @@
     .top_list {
       font-size: 23px;
     }
+
+    .a_list {
+    text-align: left;
+    font-size: 14px;
+    margin-left: 20px;
+    color: rgb(180, 180, 180);
+  }
 
     .addr {
       width: 89%;
