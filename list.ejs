@@ -105,13 +105,23 @@
 
         <div class="titles_f" id="<%= posts[i]._id %>" onclick="going(id)">
           <%= posts[i].post_title %>
+          <span class="appls">
+            (<%= posts[i].view %> views)
+          </span>
         </div>
 
       </div>
 
     </div>
 
-    
+    <style>
+      .appls {
+        display: inline-block;
+        margin-left: 5px;
+        color: rgb(180, 180, 180);
+        font-size: 14px;
+      }
+    </style>
 
     <br>
 
@@ -401,6 +411,11 @@
       margin-top: 10px;
       width: 310px;
       display: inline;
+      font-size: 15.5px;
+    }
+
+    .appls {
+      font-size: 11px;
     }
 
     .lists {

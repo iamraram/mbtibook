@@ -134,7 +134,8 @@ app.post('/add', function (req, res) {
           post_types: req.body.post_types,
           upload_time: result_time,
           showing_date: showing_date,
-          ip_result: ip_result
+          ip_result: ip_result,
+          view: 0
         },
 
         function (err, result) {
@@ -163,7 +164,8 @@ app.post('/add', function (req, res) {
           post_types: req.body.post_types,
           upload_time: result_time,
           showing_date: showing_date,
-          ip_result: ip_result
+          ip_result: ip_result,
+          view: 0
         },
 
         function (err, result) {
@@ -201,6 +203,7 @@ app.get('/posts/:id', function (req, res) {
       var post_types = result.post_types;
       var showing_date = result.showing_date;
       var ip_result = result.ip_result
+      var view = result.view
 
       const curr = new Date();
       const utc = curr.getTime() + (curr.getTimezoneOffset() * 60 * 1000);
@@ -213,6 +216,10 @@ app.get('/posts/:id', function (req, res) {
       const hour = today.getHours();
       const minute = today.getMinutes(); 
       const second = today.getSeconds();
+      
+      if (view == null || Number(view) == 0 || view == undefined) {
+        view = '0'
+      }
 
       const re = month + '월 ' + day + '일 ' + hour + '시 ' + minute + '분 ' + second + '초'
 
@@ -225,8 +232,18 @@ app.get('/posts/:id', function (req, res) {
         post_mbti: post_mbti,
         post_types: post_types,
         showing_date: showing_date,
-        ip_result: ip_result
+        ip_result: ip_result,
+        view: view
       });
+
+      db.collection('user').updateOne(
+        { _id: Number(req.params.id) },
+        { $inc: { view: 1 } },
+        function (err, result) {
+
+        }
+      )
+
       console.log('누군가가' + re + '에' + req.params.id + '번째 게시물을 조회했습니다.')
     });
 });
