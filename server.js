@@ -69,9 +69,22 @@ app.delete('/editordelete', function (req, res) {
   );
 });
 
-app.get('/menu', function (req, res) {
-  res.render('../menu.ejs');
+app.get('/', function (req, res) {
+  db.collection('user').find().toArray(function(err, result) {
+    res.render('../list.ejs', {
+      posts: result
+    });
+  });
 });
+
+app.get('/menu', function (req, res) {
+  db.collection('user').find().toArray(function (err, result) {
+    res.render('../list.ejs', {
+      posts: result
+    });
+  });
+});
+
 
 app.get('/notice', function (req, res) {
   res.render('../notice.ejs');
@@ -216,7 +229,7 @@ app.get('/posts/:id', function (req, res) {
       const hour = today.getHours();
       const minute = today.getMinutes(); 
       const second = today.getSeconds();
-      
+
       if (view == null || Number(view) == 0 || view == undefined) {
         view = '0'
       }
